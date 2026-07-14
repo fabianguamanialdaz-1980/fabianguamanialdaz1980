@@ -1,115 +1,369 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabián Guamaní Aldaz | Portafolio</title>
+    <title>Fabián Guamaní Aldaz | Portfolio</title>
+    <!-- Google Fonts: Import Playfair Display for headings and Plus Jakarta Sans for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #fafafa; color: #1a1a1a; line-height: 1.6; }
+        body { 
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #fafafa; 
+            color: #1a1a1a; 
+            line-height: 1.6; 
+        }
         a { text-decoration: none; color: inherit; }
-        .hero-section { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; text-align: center; padding: 40px 20px; background: #ffffff; border-bottom: 1px solid #eaeaea; }
-        .hero-section h1 { font-size: 3rem; font-weight: 300; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; }
-        .hero-section p { font-size: 1.2rem; color: #666; max-width: 600px; margin-bottom: 40px; font-weight: 300; }
-        .category-buttons { display: flex; gap: 20px; width: 100%; max-width: 700px; justify-content: center; }
-        .btn { flex: 1; padding: 20px; font-size: 1.1rem; font-weight: 500; letter-spacing: 1px; border: 2px solid #1a1a1a; border-radius: 4px; background: transparent; color: #1a1a1a; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; text-align: center; }
-        .btn:hover { background: #1a1a1a; color: #ffffff; transform: translateY(-3px); }
-        .navbar { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); border-bottom: 1px solid #eaeaea; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
-        .navbar h2 { font-size: 1rem; letter-spacing: 1px; font-weight: 600; }
-        .nav-links a { margin-left: 20px; font-size: 0.9rem; color: #666; transition: color 0.3s; }
-        .nav-links a:hover { color: #000; }
-        .section-container { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2rem; font-weight: 300; letter-spacing: 1px; margin-bottom: 40px; text-transform: uppercase; border-left: 4px solid #1a1a1a; padding-left: 15px; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .project-card { background: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .project-card img { width: 100%; height: auto; display: block; }
-        .project-info { padding: 25px; }
-        .project-info h3 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
-        .project-info .subtitle { font-size: 0.9rem; color: #888; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .project-info p { font-size: 0.95rem; color: #444; margin-bottom: 15px; }
-        .distinctions { font-size: 0.85rem; background: #f0f0f0; padding: 10px; border-radius: 4px; margin-top: 15px; border-left: 3px solid #ffcc00; }
-        footer { background: #1a1a1a; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 60px; }
-        footer p { font-size: 0.9rem; color: #888; }
-        .social-links { margin-top: 15px; }
-        .social-links a { margin: 0 10px; color: #ffffff; font-size: 0.9rem; opacity: 0.7; transition: opacity 0.3s; }
-        .social-links a:hover { opacity: 1; }
+        
+        /* Hero Section */
+        .hero-section { 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 90vh; 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: #ffffff; 
+            border-bottom: 1px solid #eaeaea; 
+        }
+        .hero-section h1 { 
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3.5rem; 
+            font-weight: 700; 
+            letter-spacing: -0.5px; 
+            margin-bottom: 20px; 
+            color: #111;
+        }
+        .hero-section p { 
+            font-size: 1.25rem; 
+            color: #555; 
+            max-width: 650px; 
+            margin-bottom: 45px; 
+            font-weight: 400; 
+            line-height: 1.7;
+        }
+        .category-buttons { 
+            display: flex; 
+            gap: 20px; 
+            width: 100%; 
+            max-width: 600px; 
+            justify-content: center; 
+        }
+        .btn { 
+            flex: 1; 
+            padding: 18px 25px; 
+            font-size: 0.95rem; 
+            font-weight: 600; 
+            letter-spacing: 0.5px; 
+            border: 2px solid #1a1a1a; 
+            border-radius: 6px; 
+            background: transparent; 
+            color: #1a1a1a; 
+            cursor: pointer; 
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+            text-transform: uppercase; 
+            text-align: center; 
+        }
+        .btn:hover { 
+            background: #1a1a1a; 
+            color: #ffffff; 
+            transform: translateY(-2px); 
+        }
+        
+        /* Navbar */
+        .navbar { 
+            position: sticky; 
+            top: 0; 
+            background: rgba(255, 255, 255, 0.96); 
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #eaeaea; 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            z-index: 1000; 
+        }
+        .navbar h2 { 
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem; 
+            letter-spacing: 0.5px; 
+            font-weight: 700; 
+        }
+        .nav-links a { 
+            margin-left: 25px; 
+            font-size: 0.9rem; 
+            font-weight: 500;
+            color: #666; 
+            transition: color 0.3s; 
+        }
+        .nav-links a:hover { 
+            color: #000; 
+        }
+        
+        /* Grid and Layout */
+        .section-container { 
+            padding: 100px 5% 60px 5%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        .section-title { 
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.25rem; 
+            font-weight: 700; 
+            margin-bottom: 50px; 
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #1a1a1a;
+        }
+        .projects-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            gap: 45px; 
+        }
+        .project-card { 
+            background: #ffffff; 
+            border: 1px solid #eaeaea; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease; 
+        }
+        .project-card:hover { 
+            transform: translateY(-6px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
+        }
+        .video-container { 
+            position: relative; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            overflow: hidden; 
+            background: #000; 
+        }
+        .video-container iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: 0; 
+        }
+        .project-card img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+        }
+        
+        /* Project Details */
+        .project-info { 
+            padding: 30px; 
+        }
+        .project-info h3 { 
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem; 
+            margin-bottom: 8px; 
+            font-weight: 700; 
+            color: #111;
+        }
+        .project-info .subtitle { 
+            font-size: 0.85rem; 
+            color: #888; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-weight: 600;
+        }
+        .project-info p { 
+            font-size: 0.95rem; 
+            color: #444; 
+            margin-bottom: 20px; 
+            line-height: 1.6;
+        }
+        .distinctions { 
+            font-size: 0.85rem; 
+            background: #fcf8e3; 
+            color: #8a6d3b;
+            padding: 12px 15px; 
+            border-radius: 6px; 
+            margin-top: 20px; 
+            border-left: 4px solid #f0ad4e; 
+            line-height: 1.5;
+        }
+        .credits {
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        /* Footer */
+        footer { 
+            background: #111111; 
+            color: #ffffff; 
+            text-align: center; 
+            padding: 60px 20px; 
+            margin-top: 80px; 
+        }
+        footer p { 
+            font-size: 0.9rem; 
+            color: #888; 
+        }
+        .social-links { 
+            margin-top: 20px; 
+        }
+        .social-links a { 
+            margin: 0 15px; 
+            color: #ffffff; 
+            font-size: 0.9rem; 
+            opacity: 0.7; 
+            transition: opacity 0.3s; 
+        }
+        .social-links a:hover { 
+            opacity: 1; 
+        }
+        
         @media (max-width: 768px) {
-            .hero-section h1 { font-size: 2.2rem; }
-            .hero-section p { font-size: 1rem; }
+            .hero-section h1 { font-size: 2.5rem; }
+            .hero-section p { font-size: 1.1rem; }
             .category-buttons { flex-direction: column; gap: 15px; }
-            .navbar { flex-direction: column; gap: 10px; text-align: center; }
+            .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; }
             .nav-links a { margin: 0 10px; }
             .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Hero Section -->
     <section class="hero-section">
         <h1>Fabián Guamaní Aldaz</h1>
-        <p>Director, Animador 2D e Ilustrador. Especializado en el desarrollo de proyectos autorales de animación y contenido audiovisual estratégico.</p>
+        <p>I am a 2D animator and independent filmmaker. I specialize in character-driven 2D digital animation, developing original short films, and producing engaging motion graphics & explainer videos.</p>
         <div class="category-buttons">
-            <a href="#trabajo-personal" class="btn">Trabajo Personal</a>
+            <a href="#independent-films" class="btn">Independent Films</a>
             <a href="#motion-graphics" class="btn">Motion & Explainers</a>
         </div>
     </section>
+
+    <!-- Navigation -->
     <header class="navbar">
         <h2>FABIÁN GUAMANÍ ALDAZ</h2>
         <nav class="nav-links">
-            <a href="#trabajo-personal">Trabajo Personal</a>
+            <a href="#independent-films">Independent Films</a>
             <a href="#motion-graphics">Motion & Explainers</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#about-contact">Contact</a>
         </nav>
     </header>
-    <main class="section-container" id="trabajo-personal">
-        <h2 class="section-title">Trabajo Personal</h2>
+
+    <!-- Main Content -->
+    <main class="section-container" id="independent-films">
+        <h2 class="section-title">Independent Films & Series</h2>
         <div class="projects-grid">
+            
+            <!-- Gran Lago -->
             <article class="project-card">
                 <img src="https://via.placeholder.com/600x340" alt="Gran Lago / Big Lake"> 
                 <div class="project-info">
                     <h3>Gran Lago / Big Lake</h3>
-                    <p class="subtitle">Cortometraje 2D Digital | En Producción</p>
-                    <p>Una sequía seca el lago vital para generaciones de pescadores. Mientras todos huyen, uno decide quedarse a enfrentar su destino.</p>
+                    <p class="subtitle">Short Film | 2D Digital | In Production</p>
+                    <p>Many generations of fishermen have lived around a lake keeping a vital connection with it. A drought dries up the lake and fishermen set on a journey to faraway lands. Only one decides to stay. He knows the lake’s destiny is his destiny too.</p>
+                    <div class="credits">
+                        <strong>Credits:</strong> Script, Direction, Concept Art & Animation by Fabián Guamaní Aldaz
+                    </div>
                     <div class="distinctions">
-                        <strong>Distinciones:</strong> MIFA Pitching Sessions - Animation du Monde, Annecy 2020.
+                        <strong>Distinctions:</strong> MIFA Pitching Sessions - Animation du Monde, Annecy International Film Festival, 2020.
                     </div>
                 </div>
             </article>
+
+            <!-- Ugamu -->
             <article class="project-card">
                 <div class="video-container">
                     <iframe src="https://player.vimeo.com/video/215218701?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
                     <h3>Ugamu</h3>
-                    <p class="subtitle">Serie de TV | Pre-producción</p>
-                    <p>Cuando Ugamu se convirtió en el amigo imaginario de Oscar, jamás pensó que pasaría tanto tiempo allí. Ahora Oscar tiene 15 años y Ugamu está desesperado.</p>
+                    <p class="subtitle">TV Series Project | Pre-production</p>
+                    <p>When Ugamu began to be Oscar’s imaginary friend, he never thought that he would spend so much time with him. Now Oscar is 15 years old and Ugamu is desperate.</p>
                     <div class="distinctions">
-                        <strong>Distinciones:</strong> Selección Oficial MIFA Pitching Sessions, Annecy 2018 | Residencia Ciclic Animation, Francia 2019.
+                        <strong>Key Distinctions:</strong> 
+                        Winning Project at MIFA Pitching Sessions (Annecy 2018), Ciclic Animation Residence (France 2019), and Best Animated Series Project (Andimation, Denmark 2016).
                     </div>
                 </div>
             </article>
+
+            <!-- Guau & Grrr -->
+            <article class="project-card">
+                <div class="video-container">
+                    <!-- Vimeo teaser placeholder from portfolio -->
+                    <iframe src="https://player.vimeo.com/video/650276963?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Guau & Grrr</h3>
+                    <p class="subtitle">Animated Web Series | Funding Stage</p>
+                    <p>Two siblings, who are physically identical yet have quite different personalities, are attempting to play and grow in harmony.</p>
+                    <div class="credits">
+                        <strong>Credits:</strong> Script, Direction, Concept Art & Animation by Fabián Guamaní Aldaz. Produced by Medea Sharikadze.
+                    </div>
+                </div>
+            </article>
+
         </div>
     </main>
+
+    <!-- Motion Graphics Section -->
     <section class="section-container" id="motion-graphics">
         <h2 class="section-title">Motion Graphics & Explainer Videos</h2>
         <div class="projects-grid">
+            
+            <!-- Would Be Ok -->
             <article class="project-card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/xSlhLOi2Zd4" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
                     <h3>Would Be Ok</h3>
-                    <p class="subtitle">Video Clip Animado | Colaboración Asiática (AniFest)</p>
-                    <p>Proyecto colaborativo internacional en conjunto con animadores asiáticos y producido por The AniFest en Corea.</p>
+                    <p class="subtitle">Collaborative Music Video | AniSeed Project</p>
+                    <p>An animated music video created in collaboration with young Asian animators and produced by The AniFest in South Korea.</p>
                 </div>
             </article>
+
+            <!-- Sheaghe - MAC Georgia -->
+            <article class="project-card">
+                <div class="video-container">
+                    <!-- Using placeholder since Facebook embed inside iframe can be restricted. User can change this source later -->
+                    <img src="https://via.placeholder.com/600x340" alt="Explainer video for Sheaghe">
+                </div>
+                <div class="project-info">
+                    <h3>Sheaghe</h3>
+                    <p class="subtitle">Explainer Video | MAC Georgia</p>
+                    <p>Educational illustration and animation project developed as an explainer video for MAC Georgia.</p>
+                </div>
+            </article>
+
         </div>
     </section>
-    <footer id="contacto">
-        <p>© 2026 Fabián Guamaní Aldaz. Todos los derechos reservados.</p>
+
+    <!-- Footer & Contact -->
+    <footer id="about-contact">
+        <p>© 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://vimeo.com" target="_blank">Vimeo</a>
+            <a href="https://youtube.com" target="_blank">YouTube</a>
+        </div>
     </footer>
+
 </body>
 </html>
