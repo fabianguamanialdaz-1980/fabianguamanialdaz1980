@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabián Guamaní Aldaz | Portfolio</title>
-    <!-- Google Fonts: Import Playfair Display for headings and Plus Jakarta Sans for body text -->
+    <!-- Roboto Font (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { 
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background-color: #fafafa; 
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background-color: #fbfbfb; 
             color: #1a1a1a; 
             line-height: 1.6; 
         }
@@ -26,81 +26,89 @@
             flex-direction: column; 
             justify-content: center; 
             align-items: center; 
-            min-height: 90vh; 
+            min-height: 100vh; 
             text-align: center; 
             padding: 40px 20px; 
             background: #ffffff; 
-            border-bottom: 1px solid #eaeaea; 
         }
         .hero-section h1 { 
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 3.5rem; 
-            font-weight: 700; 
-            letter-spacing: -0.5px; 
+            font-size: 3.2rem; 
+            font-weight: 300; 
+            letter-spacing: -1px; 
             margin-bottom: 20px; 
             color: #111;
         }
         .hero-section p { 
-            font-size: 1.25rem; 
+            font-size: 1.2rem; 
             color: #555; 
-            max-width: 650px; 
+            max-width: 600px; 
             margin-bottom: 45px; 
-            font-weight: 400; 
+            font-weight: 300; 
             line-height: 1.7;
         }
         .category-buttons { 
             display: flex; 
             gap: 20px; 
             width: 100%; 
-            max-width: 600px; 
+            max-width: 550px; 
             justify-content: center; 
         }
         .btn { 
             flex: 1; 
-            padding: 18px 25px; 
-            font-size: 0.95rem; 
-            font-weight: 600; 
+            padding: 16px 24px; 
+            font-size: 0.9rem; 
+            font-weight: 500; 
             letter-spacing: 0.5px; 
-            border: 2px solid #1a1a1a; 
-            border-radius: 6px; 
+            border: 1.5px solid #1a1a1a; 
+            border-radius: 4px; 
             background: transparent; 
             color: #1a1a1a; 
             cursor: pointer; 
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+            transition: all 0.25s ease-in-out; 
             text-transform: uppercase; 
             text-align: center; 
         }
         .btn:hover { 
             background: #1a1a1a; 
             color: #ffffff; 
-            transform: translateY(-2px); 
         }
         
-        /* Navbar */
+        /* Sticky Navigation (Initially hidden off-screen or faded, shown via JS scroll) */
         .navbar { 
-            position: sticky; 
+            position: fixed; 
             top: 0; 
+            left: 0;
+            width: 100%;
             background: rgba(255, 255, 255, 0.96); 
             backdrop-filter: blur(8px);
             border-bottom: 1px solid #eaeaea; 
-            padding: 20px 5%; 
+            padding: 18px 5%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
             z-index: 1000; 
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+        /* Class active when scrolled past hero */
+        .navbar.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
         .navbar h2 { 
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.2rem; 
+            font-size: 1.1rem; 
             letter-spacing: 0.5px; 
-            font-weight: 700; 
+            font-weight: 500; 
         }
         .nav-links a { 
             margin-left: 25px; 
-            font-size: 0.9rem; 
+            font-size: 0.85rem; 
             font-weight: 500;
             color: #666; 
             transition: color 0.3s; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .nav-links a:hover { 
             color: #000; 
@@ -108,25 +116,26 @@
         
         /* Grid and Layout */
         .section-container { 
-            padding: 100px 5% 60px 5%; 
+            padding: 120px 5% 60px 5%; 
             max-width: 1200px; 
             margin: 0 auto; 
         }
         .section-title { 
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 2.25rem; 
-            font-weight: 700; 
+            font-size: 2rem; 
+            font-weight: 300; 
+            letter-spacing: -0.5px;
             margin-bottom: 50px; 
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
+            text-transform: uppercase;
         }
         .section-title::after {
             content: '';
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 50px;
-            height: 3px;
+            width: 40px;
+            height: 2px;
             background-color: #1a1a1a;
         }
         .projects-grid { 
@@ -137,13 +146,13 @@
         .project-card { 
             background: #ffffff; 
             border: 1px solid #eaeaea; 
-            border-radius: 12px; 
+            border-radius: 6px; 
             overflow: hidden; 
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
         }
         .project-card:hover { 
-            transform: translateY(-6px); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
+            transform: translateY(-4px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.04); 
         }
         .video-container { 
             position: relative; 
@@ -171,35 +180,39 @@
             padding: 30px; 
         }
         .project-info h3 { 
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.5rem; 
+            font-size: 1.4rem; 
             margin-bottom: 8px; 
-            font-weight: 700; 
+            font-weight: 400; 
             color: #111;
         }
         .project-info .subtitle { 
-            font-size: 0.85rem; 
+            font-size: 0.8rem; 
             color: #888; 
             margin-bottom: 20px; 
             text-transform: uppercase; 
-            letter-spacing: 1px; 
-            font-weight: 600;
+            letter-spacing: 0.5px; 
+            font-weight: 500;
         }
         .project-info p { 
             font-size: 0.95rem; 
             color: #444; 
             margin-bottom: 20px; 
+            font-weight: 300;
             line-height: 1.6;
         }
+        
+        /* Elegantly styled distinctions (Removed yellow card wrapper) */
         .distinctions { 
             font-size: 0.85rem; 
-            background: #fcf8e3; 
-            color: #8a6d3b;
-            padding: 12px 15px; 
-            border-radius: 6px; 
-            margin-top: 20px; 
-            border-left: 4px solid #f0ad4e; 
+            color: #555;
+            padding: 15px 0 0 0; 
+            margin-top: 15px; 
+            border-top: 1px dashed #eaeaea;
             line-height: 1.5;
+        }
+        .distinctions strong {
+            color: #111;
+            font-weight: 500;
         }
         .credits {
             font-size: 0.85rem;
@@ -218,8 +231,9 @@
             margin-top: 80px; 
         }
         footer p { 
-            font-size: 0.9rem; 
-            color: #888; 
+            font-size: 0.85rem; 
+            color: #777; 
+            font-weight: 300;
         }
         .social-links { 
             margin-top: 20px; 
@@ -227,19 +241,22 @@
         .social-links a { 
             margin: 0 15px; 
             color: #ffffff; 
-            font-size: 0.9rem; 
-            opacity: 0.7; 
+            font-size: 0.85rem; 
+            opacity: 0.6; 
             transition: opacity 0.3s; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .social-links a:hover { 
             opacity: 1; 
         }
         
         @media (max-width: 768px) {
-            .hero-section h1 { font-size: 2.5rem; }
+            .hero-section h1 { font-size: 2.4rem; }
             .hero-section p { font-size: 1.1rem; }
             .category-buttons { flex-direction: column; gap: 15px; }
             .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; }
+            .navbar.visible { transform: translateY(0); }
             .nav-links a { margin: 0 10px; }
             .projects-grid { grid-template-columns: 1fr; }
         }
@@ -247,8 +264,8 @@
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
+    <!-- Hero Section (Welcome screen) -->
+    <section class="hero-section" id="welcome">
         <h1>Fabián Guamaní Aldaz</h1>
         <p>I am a 2D animator and independent filmmaker. I specialize in character-driven 2D digital animation, developing original short films, and producing engaging motion graphics & explainer videos.</p>
         <div class="category-buttons">
@@ -257,8 +274,8 @@
         </div>
     </section>
 
-    <!-- Navigation -->
-    <header class="navbar">
+    <!-- Navigation (Hidden on initial view, shows only on scroll past Hero) -->
+    <header class="navbar" id="sticky-navbar">
         <h2>FABIÁN GUAMANÍ ALDAZ</h2>
         <nav class="nav-links">
             <a href="#independent-films">Independent Films</a>
@@ -307,7 +324,6 @@
             <!-- Guau & Grrr -->
             <article class="project-card">
                 <div class="video-container">
-                    <!-- Vimeo teaser placeholder from portfolio -->
                     <iframe src="https://player.vimeo.com/video/650276963?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
@@ -343,7 +359,6 @@
             <!-- Sheaghe - MAC Georgia -->
             <article class="project-card">
                 <div class="video-container">
-                    <!-- Using placeholder since Facebook embed inside iframe can be restricted. User can change this source later -->
                     <img src="https://via.placeholder.com/600x340" alt="Explainer video for Sheaghe">
                 </div>
                 <div class="project-info">
@@ -364,6 +379,24 @@
             <a href="https://youtube.com" target="_blank">YouTube</a>
         </div>
     </footer>
+
+    <!-- Simple Scroll Script to handle the navbar presentation -->
+    <script>
+        const navbar = document.getElementById('sticky-navbar');
+        const heroSection = document.getElementById('welcome');
+
+        window.addEventListener('scroll', () => {
+            // Get the height of the hero welcome screen
+            const heroHeight = heroSection.offsetHeight;
+            
+            // Show navbar only after scrolling past 80% of the Hero section
+            if (window.scrollY > (heroHeight * 0.8)) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+        });
+    </script>
 
 </body>
 </html>
