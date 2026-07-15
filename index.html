@@ -3,400 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabián Guamaní Aldaz | Portfolio</title>
-    <!-- Roboto Font (Google Fonts) -->
+    <title>Fabián Guamaní Aldaz | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; 
-            background-color: #fbfbfb; 
-            color: #1a1a1a; 
-            line-height: 1.6; 
-        }
+        body { font-family: 'Roboto', sans-serif; background-color: #fbfbfb; color: #1a1a1a; line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
         
         /* Hero Section */
-        .hero-section { 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
-            text-align: center; 
-            padding: 40px 20px; 
-            background: #ffffff; 
-        }
-        .hero-section h1 { 
-            font-size: 3.2rem; 
-            font-weight: 300; 
-            letter-spacing: -1px; 
-            margin-bottom: 20px; 
-            color: #111;
-        }
-        .hero-section p { 
-            font-size: 1.2rem; 
-            color: #555; 
-            max-width: 600px; 
-            margin-bottom: 45px; 
-            font-weight: 300; 
-            line-height: 1.7;
-        }
-        .category-buttons { 
-            display: flex; 
-            gap: 20px; 
-            width: 100%; 
-            max-width: 550px; 
-            justify-content: center; 
-        }
-        .btn { 
-            flex: 1; 
-            padding: 16px 24px; 
-            font-size: 0.9rem; 
-            font-weight: 500; 
-            letter-spacing: 0.5px; 
-            border: 1.5px solid #1a1a1a; 
-            border-radius: 4px; 
-            background: transparent; 
-            color: #1a1a1a; 
-            cursor: pointer; 
-            transition: all 0.25s ease-in-out; 
-            text-transform: uppercase; 
-            text-align: center; 
-        }
-        .btn:hover { 
-            background: #1a1a1a; 
-            color: #ffffff; 
-        }
+        .hero-section { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; text-align: center; padding: 80px 20px; background: #ffffff; }
+        .hero-video-container { width: 100%; max-width: 1080px; aspect-ratio: 1920 / 480; position: relative; background: #000; border-radius: 6px; overflow: hidden; border: 1px solid #eaeaea; margin-bottom: 40px; }
+        .hero-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; pointer-events: none; }
+        .hero-section h1 { font-size: 3.2rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 20px; color: #111; }
+        .hero-section p { font-size: 1.2rem; color: #555; max-width: 600px; margin-bottom: 45px; font-weight: 300; line-height: 1.7; }
+        .category-buttons { display: flex; gap: 20px; width: 100%; max-width: 550px; justify-content: center; }
+        .btn { flex: 1; padding: 16px 24px; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; border: 1.5px solid #1a1a1a; border-radius: 4px; background: transparent; color: #1a1a1a; cursor: pointer; transition: all 0.25s ease-in-out; text-transform: uppercase; text-align: center; }
+        .btn:hover { background: #1a1a1a; color: #ffffff; }
         
-        /* Sticky Navigation (Initially hidden off-screen or faded, shown via JS scroll) */
-        .navbar { 
-            position: fixed; 
-            top: 0; 
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.96); 
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #eaeaea; 
-            padding: 18px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            z-index: 1000; 
-            transform: translateY(-100%);
-            opacity: 0;
-            transition: transform 0.4s ease, opacity 0.4s ease;
-        }
-        /* Class active when scrolled past hero */
-        .navbar.visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        .navbar h2 { 
-            font-size: 1.1rem; 
-            letter-spacing: 0.5px; 
-            font-weight: 500; 
-        }
-        .nav-links a { 
-            margin-left: 25px; 
-            font-size: 0.85rem; 
-            font-weight: 500;
-            color: #666; 
-            transition: color 0.3s; 
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .nav-links a:hover { 
-            color: #000; 
-        }
+        /* Fixed Header for Home */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #eaeaea; padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .navbar h2 { font-size: 1.1rem; letter-spacing: 0.5px; font-weight: 500; }
+        .nav-links a { margin-left: 25px; font-size: 0.85rem; font-weight: 500; color: #666; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover, .nav-links a.active { color: #000; }
         
-        /* Grid and Layout */
-        .section-container { 
-            padding: 120px 5% 60px 5%; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-        .section-title { 
-            font-size: 2rem; 
-            font-weight: 300; 
-            letter-spacing: -0.5px;
-            margin-bottom: 50px; 
-            position: relative;
-            padding-bottom: 12px;
-            text-transform: uppercase;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: #1a1a1a;
-        }
-        .projects-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-            gap: 45px; 
-        }
-        .project-card { 
-            background: #ffffff; 
-            border: 1px solid #eaeaea; 
-            border-radius: 6px; 
-            overflow: hidden; 
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
-        }
-        .project-card:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.04); 
-        }
-        .video-container { 
-            position: relative; 
-            padding-bottom: 56.25%; 
-            height: 0; 
-            overflow: hidden; 
-            background: #000; 
-        }
-        .video-container iframe { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            border: 0; 
-        }
-        .project-card img { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
-        }
-        
-        /* Project Details */
-        .project-info { 
-            padding: 30px; 
-        }
-        .project-info h3 { 
-            font-size: 1.4rem; 
-            margin-bottom: 8px; 
-            font-weight: 400; 
-            color: #111;
-        }
-        .project-info .subtitle { 
-            font-size: 0.8rem; 
-            color: #888; 
-            margin-bottom: 20px; 
-            text-transform: uppercase; 
-            letter-spacing: 0.5px; 
-            font-weight: 500;
-        }
-        .project-info p { 
-            font-size: 0.95rem; 
-            color: #444; 
-            margin-bottom: 20px; 
-            font-weight: 300;
-            line-height: 1.6;
-        }
-        
-        /* Elegantly styled distinctions (Removed yellow card wrapper) */
-        .distinctions { 
-            font-size: 0.85rem; 
-            color: #555;
-            padding: 15px 0 0 0; 
-            margin-top: 15px; 
-            border-top: 1px dashed #eaeaea;
-            line-height: 1.5;
-        }
-        .distinctions strong {
-            color: #111;
-            font-weight: 500;
-        }
-        .credits {
-            font-size: 0.85rem;
-            color: #666;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-            margin-top: 15px;
-        }
-        
-        /* Footer */
-        footer { 
-            background: #111111; 
-            color: #ffffff; 
-            text-align: center; 
-            padding: 60px 20px; 
-            margin-top: 80px; 
-        }
-        footer p { 
-            font-size: 0.85rem; 
-            color: #777; 
-            font-weight: 300;
-        }
-        .social-links { 
-            margin-top: 20px; 
-        }
-        .social-links a { 
-            margin: 0 15px; 
-            color: #ffffff; 
-            font-size: 0.85rem; 
-            opacity: 0.6; 
-            transition: opacity 0.3s; 
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .social-links a:hover { 
-            opacity: 1; 
-        }
-        
+        footer { background: #111111; color: #ffffff; text-align: center; padding: 40px 20px; }
+        footer p { font-size: 0.85rem; color: #777; font-weight: 300; }
         @media (max-width: 768px) {
             .hero-section h1 { font-size: 2.4rem; }
-            .hero-section p { font-size: 1.1rem; }
             .category-buttons { flex-direction: column; gap: 15px; }
-            .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; }
-            .navbar.visible { transform: translateY(0); }
-            .nav-links a { margin: 0 10px; }
-            .projects-grid { grid-template-columns: 1fr; }
+            .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; position: relative; }
+            .hero-section { min-height: auto; padding-top: 40px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section (Welcome screen) -->
-    <section class="hero-section" id="welcome">
-        <h1>Fabián Guamaní Aldaz</h1>
-        <p>I am a 2D animator and independent filmmaker. I specialize in character-driven 2D digital animation, developing original short films, and producing engaging motion graphics & explainer videos.</p>
-        <div class="category-buttons">
-            <a href="#independent-films" class="btn">Independent Films</a>
-            <a href="#motion-graphics" class="btn">Motion & Explainers</a>
-        </div>
-    </section>
-
-    <!-- Navigation (Hidden on initial view, shows only on scroll past Hero) -->
-    <header class="navbar" id="sticky-navbar">
-        <h2>FABIÁN GUAMANÍ ALDAZ</h2>
+    <header class="navbar">
+        <h2><a href="index.html">FABIÁN GUAMANÍ ALDAZ</a></h2>
         <nav class="nav-links">
-            <a href="#independent-films">Independent Films</a>
-            <a href="#motion-graphics">Motion & Explainers</a>
-            <a href="#about-contact">Contact</a>
+            <a href="independent-films.html">Independent Projects</a>
+            <a href="motion-graphics.html">Motion & Explainers</a>
+            <a href="bio.html">Bio</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="section-container" id="independent-films">
-        <h2 class="section-title">Independent Films & Series</h2>
-        <div class="projects-grid">
-            
-            <!-- Gran Lago -->
-            <article class="project-card">
-                <img src="https://via.placeholder.com/600x340" alt="Gran Lago / Big Lake"> 
-                <div class="project-info">
-                    <h3>Gran Lago / Big Lake</h3>
-                    <p class="subtitle">Short Film | 2D Digital | In Production</p>
-                    <p>Many generations of fishermen have lived around a lake keeping a vital connection with it. A drought dries up the lake and fishermen set on a journey to faraway lands. Only one decides to stay. He knows the lake’s destiny is his destiny too.</p>
-                    <div class="credits">
-                        <strong>Credits:</strong> Script, Direction, Concept Art & Animation by Fabián Guamaní Aldaz
-                    </div>
-                    <div class="distinctions">
-                        <strong>Distinctions:</strong> MIFA Pitching Sessions - Animation du Monde, Annecy International Film Festival, 2020.
-                    </div>
-                </div>
-            </article>
-
-            <!-- Ugamu -->
-            <article class="project-card">
-                <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/215218701?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <h3>Ugamu</h3>
-                    <p class="subtitle">TV Series Project | Pre-production</p>
-                    <p>When Ugamu began to be Oscar’s imaginary friend, he never thought that he would spend so much time with him. Now Oscar is 15 years old and Ugamu is desperate.</p>
-                    <div class="distinctions">
-                        <strong>Key Distinctions:</strong> 
-                        Winning Project at MIFA Pitching Sessions (Annecy 2018), Ciclic Animation Residence (France 2019), and Best Animated Series Project (Andimation, Denmark 2016).
-                    </div>
-                </div>
-            </article>
-
-            <!-- Guau & Grrr -->
-            <article class="project-card">
-                <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/650276963?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <h3>Guau & Grrr</h3>
-                    <p class="subtitle">Animated Web Series | Funding Stage</p>
-                    <p>Two siblings, who are physically identical yet have quite different personalities, are attempting to play and grow in harmony.</p>
-                    <div class="credits">
-                        <strong>Credits:</strong> Script, Direction, Concept Art & Animation by Fabián Guamaní Aldaz. Produced by Medea Sharikadze.
-                    </div>
-                </div>
-            </article>
-
+    <section class="hero-section" id="welcome">
+        <div class="hero-video-container">
+            <iframe src="https://player.vimeo.com/video/329537245?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
-    </main>
-
-    <!-- Motion Graphics Section -->
-    <section class="section-container" id="motion-graphics">
-        <h2 class="section-title">Motion Graphics & Explainer Videos</h2>
-        <div class="projects-grid">
-            
-            <!-- Would Be Ok -->
-            <article class="project-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/xSlhLOi2Zd4" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <h3>Would Be Ok</h3>
-                    <p class="subtitle">Collaborative Music Video | AniSeed Project</p>
-                    <p>An animated music video created in collaboration with young Asian animators and produced by The AniFest in South Korea.</p>
-                </div>
-            </article>
-
-            <!-- Sheaghe - MAC Georgia -->
-            <article class="project-card">
-                <div class="video-container">
-                    <img src="https://via.placeholder.com/600x340" alt="Explainer video for Sheaghe">
-                </div>
-                <div class="project-info">
-                    <h3>Sheaghe</h3>
-                    <p class="subtitle">Explainer Video | MAC Georgia</p>
-                    <p>Educational illustration and animation project developed as an explainer video for MAC Georgia.</p>
-                </div>
-            </article>
-
+        <h1>Fabián Guamaní Aldaz</h1>
+        <p>I am a 2D animator and independent filmmaker. I specialize in character-driven 2D digital animation, developing original short films, and producing engaging motion graphics & explainer videos.</p>
+        <div class="category-buttons">
+            <a href="independent-films.html" class="btn">Independent Projects</a>
+            <a href="motion-graphics.html" class="btn">Motion & Explainers</a>
         </div>
     </section>
 
-    <!-- Footer & Contact -->
-    <footer id="about-contact">
+    <footer>
         <p>© 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://vimeo.com" target="_blank">Vimeo</a>
-            <a href="https://youtube.com" target="_blank">YouTube</a>
-        </div>
     </footer>
-
-    <!-- Simple Scroll Script to handle the navbar presentation -->
-    <script>
-        const navbar = document.getElementById('sticky-navbar');
-        const heroSection = document.getElementById('welcome');
-
-        window.addEventListener('scroll', () => {
-            // Get the height of the hero welcome screen
-            const heroHeight = heroSection.offsetHeight;
-            
-            // Show navbar only after scrolling past 80% of the Hero section
-            if (window.scrollY > (heroHeight * 0.8)) {
-                navbar.classList.add('visible');
-            } else {
-                navbar.classList.remove('visible');
-            }
-        });
-    </script>
 
 </body>
 </html>

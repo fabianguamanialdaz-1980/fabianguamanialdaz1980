@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabián Guamaní Aldaz | Bio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Roboto', sans-serif; background-color: #fbfbfb; color: #1a1a1a; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #eaeaea; padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .navbar h2 { font-size: 1.1rem; letter-spacing: 0.5px; font-weight: 500; }
+        .nav-links a { margin-left: 25px; font-size: 0.85rem; font-weight: 500; color: #666; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover, .nav-links a.active { color: #000; }
+        
+        .section-container { padding: 160px 5% 60px 5%; max-width: 800px; margin: 0 auto; }
+        .section-title { font-size: 2rem; font-weight: 300; letter-spacing: -0.5px; margin-bottom: 30px; position: relative; padding-bottom: 12px; text-transform: uppercase; }
+        .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background-color: #1a1a1a; }
+        
+        .bio-content p { font-size: 1.1rem; color: #444; font-weight: 300; margin-bottom: 25px; line-height: 1.8; }
+        
+        footer { background: #111111; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 120px; }
+        footer p { font-size: 0.85rem; color: #777; font-weight: 300; }
+        @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; position: relative; } .section-container { padding-top: 40px; } }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <h2><a href="index.html">FABIÁN GUAMANÍ ALDAZ</a></h2>
+        <nav class="nav-links">
+            <a href="independent-films.html">Independent Projects</a>
+            <a href="motion-graphics.html">Motion & Explainers</a>
+            <a href="bio.html" class="active">Bio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="section-container">
+        <h2 class="section-title">Biography</h2>
+        <div class="bio-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

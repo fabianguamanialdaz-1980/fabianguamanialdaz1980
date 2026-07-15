@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabián Guamaní Aldaz | Motion & Explainers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Roboto', sans-serif; background-color: #fbfbfb; color: #1a1a1a; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #eaeaea; padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .navbar h2 { font-size: 1.1rem; letter-spacing: 0.5px; font-weight: 500; }
+        .nav-links a { margin-left: 25px; font-size: 0.85rem; font-weight: 500; color: #666; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover, .nav-links a.active { color: #000; }
+        
+        .section-container { padding: 120px 5% 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2rem; font-weight: 300; letter-spacing: -0.5px; margin-bottom: 50px; position: relative; padding-bottom: 12px; text-transform: uppercase; }
+        .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background-color: #1a1a1a; }
+        
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 45px; }
+        .project-card { background: #ffffff; border: 1px solid #eaeaea; border-radius: 6px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.04); }
+        
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        .project-info { padding: 30px; }
+        .project-info h3 { font-size: 1.4rem; margin-bottom: 4px; font-weight: 400; color: #111; }
+        .project-info .subtitle { font-size: 0.85rem; color: #666; font-weight: 300; }
+        
+        footer { background: #111111; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 80px; }
+        footer p { font-size: 0.85rem; color: #777; font-weight: 300; }
+        @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; position: relative; } .section-container { padding-top: 40px; } .projects-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <h2><a href="index.html">FABIÁN GUAMANÍ ALDAZ</a></h2>
+        <nav class="nav-links">
+            <a href="independent-films.html">Independent Projects</a>
+            <a href="motion-graphics.html" class="active">Motion & Explainers</a>
+            <a href="bio.html">Bio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="section-container">
+        <h2 class="section-title">Motion Graphics & Explainer Videos</h2>
+        <div class="projects-grid">
+            
+            <!-- Generé bloques limpios listos para clonar/cambiar links -->
+            <!-- Tarjeta 1 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 2 (Sheaghe) -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Sheaghe (MAC Georgia)</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 3 (Repetidas hasta completar la grilla) -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 4 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 5 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 6 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 7 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 8 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 9 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 10 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 11 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 12 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 13 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 14 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 15 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 16 -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p class="subtitle">Animator & Illustrator</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabián Guamaní Aldaz | Independent Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Roboto', sans-serif; background-color: #fbfbfb; color: #1a1a1a; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #eaeaea; padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .navbar h2 { font-size: 1.1rem; letter-spacing: 0.5px; font-weight: 500; }
+        .nav-links a { margin-left: 25px; font-size: 0.85rem; font-weight: 500; color: #666; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover, .nav-links a.active { color: #000; }
+        
+        .section-container { padding: 120px 5% 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2rem; font-weight: 300; letter-spacing: -0.5px; margin-bottom: 50px; position: relative; padding-bottom: 12px; text-transform: uppercase; }
+        .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background-color: #1a1a1a; }
+        
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 45px; }
+        .project-card { background: #ffffff; border: 1px solid #eaeaea; border-radius: 6px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.04); }
+        
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        /* Carousel Slider */
+        .carousel-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #eaeaea; }
+        .carousel-slides { display: flex; position: absolute; top: 0; left: 0; width: 300%; height: 100%; transition: transform 0.4s ease-in-out; }
+        .carousel-slides img { width: 33.333%; height: 100%; object-fit: cover; display: block; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.8); border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s; }
+        .carousel-btn:hover { background: rgba(255, 255, 255, 1); }
+        .carousel-btn.prev { left: 15px; }
+        .carousel-btn.next { right: 15px; }
+        
+        /* Clean Editorial Info Style (No Horizontal Lines) */
+        .project-info { padding: 30px; }
+        .project-info h3 { font-size: 1.4rem; margin-bottom: 4px; font-weight: 400; color: #111; }
+        .project-info .subtitle { font-size: 0.8rem; color: #888; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; }
+        .project-info p { font-size: 0.95rem; color: #444; margin-bottom: 16px; font-weight: 300; line-height: 1.6; }
+        .project-info .credits, .project-info .distinctions { font-size: 0.85rem; color: #555; margin-top: 8px; line-height: 1.5; }
+        .project-info strong { color: #111; font-weight: 500; }
+        
+        footer { background: #111111; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 80px; }
+        footer p { font-size: 0.85rem; color: #777; font-weight: 300; }
+        @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; position: relative; } .section-container { padding-top: 40px; } .projects-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <h2><a href="index.html">FABIÁN GUAMANÍ ALDAZ</a></h2>
+        <nav class="nav-links">
+            <a href="independent-films.html" class="active">Independent Projects</a>
+            <a href="motion-graphics.html">Motion & Explainers</a>
+            <a href="bio.html">Bio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="section-container">
+        <h2 class="section-title">Independent Projects</h2>
+        <div class="projects-grid">
+            
+            <!-- 1. Ugamu -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/215218701?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Ugamu</h3>
+                    <p class="subtitle">TV Series Project | Pre-production</p>
+                    <p>When Ugamu began to be Oscar’s imaginary friend, he never thought that he would spend so much time with him. Now Oscar is 15 years old and Ugamu is desperate.</p>
+                    <div class="credits">
+                        <strong>Credits:</strong> Original Concept, Direction & Animation by Fabián Guamaní Aldaz
+                    </div>
+                    <div class="distinctions">
+                        <strong>Distinctions:</strong> Winning Project at MIFA Pitching Sessions (Annecy 2018), Ciclic Animation Residence (France 2019), and Best Animated Series Project (Andimation, Denmark 2016).
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2. Frontera -->
+            <article class="project-card">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Frontera / Border</h3>
+                    <p class="subtitle">Animated Short Film | 2D Digital | 2017</p>
+                    <p>A beautifully crafted animated short film exploring borders, boundaries, and human connections through unique visual storytelling.</p>
+                    <div class="credits">
+                        <strong>Credits:</strong> Direction and Animation by Fabián Guamaní Aldaz.
+                    </div>
+                    <div class="distinctions">
+                        <strong>Distinctions:</strong> Official Selection at Annecy International Film Festival (2017), Animation Festival Anima Latina (2017), International Animated Films Festival KROK (2017), Lisbon Animated Film Festival MONSTRA (2018), and Indie-AniFest (2019).
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3. Gran Lago -->
+            <article class="project-card">
+                <div class="video-container">
+                    <img src="https://via.placeholder.com/600x340" alt="Gran Lago / Big Lake" style="width:100%; height:100%; object-fit:cover;"> 
+                </div>
+                <div class="project-info">
+                    <h3>Gran Lago / Big Lake</h3>
+                    <p class="subtitle">Short Film | 2D Digital | In Production</p>
+                    <p>Many generations of fishermen have lived around a lake keeping a vital connection with it. A drought dries up the lake and fishermen set on a journey to faraway lands. Only one decides to stay. He knows the lake’s destiny is his destiny too.</p>
+                    <div class="credits">
+                        <strong>Credits:</strong> Script, Direction, Concept Art & Animation by Fabián Guamaní Aldaz
+                    </div>
+                    <div class="distinctions">
+                        <strong>Distinctions:</strong> MIFA Pitching Sessions - Animation du Monde, Annecy International Film Festival, 2020.
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4. Shokoladi (With Carousel Slider) -->
+            <article class="project-card">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+                    <div class="carousel-slides" id="shokoladi-slides">
+                        <img src="https://via.placeholder.com/600x340/111/fff?text=Shokoladi+Art+1" alt="Shokoladi Concept 1">
+                        <img src="https://via.placeholder.com/600x340/444/fff?text=Shokoladi+Art+2" alt="Shokoladi Concept 2">
+                        <img src="https://via.placeholder.com/600x340/777/fff?text=Shokoladi+Art+3" alt="Shokoladi Concept 3">
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Shokoladi</h3>
+                    <p class="subtitle">Project in Development | 2D Animation</p>
+                    <p>An original animated project currently in active development, exploring rich characters and unique artistic concepts.</p>
+                    <div class="credits">
+                        <strong>Credits:</strong> Created and Developed by Fabián Guamaní Aldaz
+                    </div>
+                    <div class="distinctions">
+                        <strong>Distinctions:</strong> Selected for the MIFA Pitching Sessions, Annecy International Film Festival, 2022.
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = currentSlide * -33.333;
+            document.getElementById('shokoladi-slides').style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>

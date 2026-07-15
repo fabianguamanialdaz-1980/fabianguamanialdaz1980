@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabián Guamaní Aldaz | Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Roboto', sans-serif; background-color: #fbfbfb; color: #1a1a1a; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #eaeaea; padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .navbar h2 { font-size: 1.1rem; letter-spacing: 0.5px; font-weight: 500; }
+        .nav-links a { margin-left: 25px; font-size: 0.85rem; font-weight: 500; color: #666; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover, .nav-links a.active { color: #000; }
+        
+        .section-container { padding: 160px 5% 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
+        .section-title { font-size: 2rem; font-weight: 300; letter-spacing: -0.5px; margin-bottom: 40px; position: relative; padding-bottom: 12px; text-transform: uppercase; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 40px; height: 2px; background-color: #1a1a1a; }
+        
+        .contact-content { margin-top: 20px; }
+        .contact-content p { font-size: 1.1rem; color: #555; font-weight: 300; margin-bottom: 15px; }
+        .email-link { font-size: 1.8rem; font-weight: 300; color: #1a1a1a; letter-spacing: -0.5px; transition: color 0.2s; }
+        .email-link:hover { color: #666; }
+        
+        footer { background: #111111; color: #ffffff; text-align: center; padding: 40px 20px; position: absolute; bottom: 0; width: 100%; }
+        footer p { font-size: 0.85rem; color: #777; font-weight: 300; }
+        @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; position: relative; } .section-container { padding-top: 40px; } footer { position: relative; margin-top: 120px; } }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <h2><a href="index.html">FABIÁN GUAMANÍ ALDAZ</a></h2>
+        <nav class="nav-links">
+            <a href="independent-films.html">Independent Projects</a>
+            <a href="motion-graphics.html">Motion & Explainers</a>
+            <a href="bio.html">Bio</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main class="section-container">
+        <h2 class="section-title">Get in touch</h2>
+        <div class="contact-content">
+            <p>For project inquiries, freelance opportunities, or collaboration:</p>
+            <a href="mailto:fabianguamanialdaz@gmail.com" class="email-link">fabianguamanialdaz@gmail.com</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
