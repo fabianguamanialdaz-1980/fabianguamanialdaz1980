@@ -9,62 +9,79 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Roboto', sans-serif; background-color: #fbfbfb; color: #1a1a1a; line-height: 1.6; }
+        body { font-family: 'Roboto', sans-serif; background-color: #fbfbfb; color: #1a1a1a; line-height: 1.6; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         
-        /* Hero Section */
-        .hero-section { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; text-align: center; padding: 80px 20px; background: #ffffff; }
-        .hero-video-container { width: 100%; max-width: 1080px; aspect-ratio: 1920 / 480; position: relative; background: #000; border-radius: 6px; overflow: hidden; border: 1px solid #eaeaea; margin-bottom: 40px; }
-        .hero-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; pointer-events: none; }
-        .hero-section h1 { font-size: 3.2rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 20px; color: #111; }
-        .hero-section p { font-size: 1.2rem; color: #555; max-width: 600px; margin-bottom: 45px; font-weight: 300; line-height: 1.7; }
-        .category-buttons { display: flex; gap: 20px; width: 100%; max-width: 550px; justify-content: center; }
-        .btn { flex: 1; padding: 16px 24px; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; border: 1.5px solid #1a1a1a; border-radius: 4px; background: transparent; color: #1a1a1a; cursor: pointer; transition: all 0.25s ease-in-out; text-transform: uppercase; text-align: center; }
-        .btn:hover { background: #1a1a1a; color: #ffffff; }
+        /* Hero Section (Ajustado sin contenedor de video) */
+        .hero-section { 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: #ffffff; 
+        }
+        .hero-section h1 { 
+            font-size: 3.5rem; 
+            font-weight: 300; 
+            letter-spacing: -1px; 
+            margin-bottom: 24px; 
+            color: #111; 
+        }
+        .hero-section p { 
+            font-size: 1.25rem; 
+            color: #555; 
+            max-width: 650px; 
+            margin-bottom: 45px; 
+            font-weight: 300; 
+            line-height: 1.7; 
+        }
+        .category-buttons { 
+            display: flex; 
+            gap: 20px; 
+            width: 100%; 
+            max-width: 550px; 
+            justify-content: center; 
+        }
+        .btn { 
+            flex: 1; 
+            padding: 16px 24px; 
+            font-size: 0.9rem; 
+            font-weight: 500; 
+            letter-spacing: 0.5px; 
+            border: 1.5px solid #1a1a1a; 
+            border-radius: 4px; 
+            background: transparent; 
+            color: #1a1a1a; 
+            cursor: pointer; 
+            transition: all 0.25s ease-in-out; 
+            text-transform: uppercase; 
+            text-align: center; 
+        }
+        .btn:hover { 
+            background: #1a1a1a; 
+            color: #ffffff; 
+        }
         
-        /* Fixed Header for Home */
-        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #eaeaea; padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
-        .navbar h2 { font-size: 1.1rem; letter-spacing: 0.5px; font-weight: 500; }
-        .nav-links a { margin-left: 25px; font-size: 0.85rem; font-weight: 500; color: #666; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
-        .nav-links a:hover, .nav-links a.active { color: #000; }
-        
-        footer { background: #111111; color: #ffffff; text-align: center; padding: 40px 20px; }
-        footer p { font-size: 0.85rem; color: #777; font-weight: 300; }
         @media (max-width: 768px) {
-            .hero-section h1 { font-size: 2.4rem; }
+            .hero-section h1 { font-size: 2.6rem; }
+            .hero-section p { font-size: 1.15rem; }
             .category-buttons { flex-direction: column; gap: 15px; }
-            .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; position: relative; }
-            .hero-section { min-height: auto; padding-top: 40px; }
         }
     </style>
 </head>
 <body>
 
-    <header class="navbar">
-        <h2><a href="index.html">FABIÁN GUAMANÍ ALDAZ</a></h2>
-        <nav class="nav-links">
-            <a href="independent-films.html">Independent Projects</a>
-            <a href="motion-graphics.html">Motion & Explainers</a>
-            <a href="bio.html">Bio</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
     <section class="hero-section" id="welcome">
-        <div class="hero-video-container">
-            <iframe src="https://player.vimeo.com/video/329537245?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        </div>
         <h1>Fabián Guamaní Aldaz</h1>
-        <p>I am a 2D animator and independent filmmaker. I specialize in character-driven 2D digital animation, developing original short films, and producing engaging motion graphics & explainer videos.</p>
+        <p>2D Animator and Independent Filmmaker specializing in character-driven digital 2D animation, original animated short films, and engaging motion graphics and explainer videos.</p>
         <div class="category-buttons">
-            <a href="independent-films.html" class="btn">Independent Projects</a>
+            <a href="independent-films.html" class="btn">Films & Series</a>
             <a href="motion-graphics.html" class="btn">Motion & Explainers</a>
         </div>
     </section>
-
-    <footer>
-        <p>© 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
-    </footer>
 
 </body>
 </html>

@@ -12,12 +12,15 @@
         body { font-family: 'Roboto', sans-serif; background-color: #fbfbfb; color: #1a1a1a; line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
         
-        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #eaeaea; padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
-        .navbar h2 { font-size: 1.1rem; letter-spacing: 0.5px; font-weight: 500; }
+        /* Navbar with Subtitle */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #eaeaea; padding: 14px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .nav-logo { display: flex; flex-direction: column; }
+        .nav-logo h2 { font-size: 1.1rem; letter-spacing: 0.5px; font-weight: 500; line-height: 1.2; }
+        .nav-logo span { font-size: 0.7rem; color: #777; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
         .nav-links a { margin-left: 25px; font-size: 0.85rem; font-weight: 500; color: #666; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
         .nav-links a:hover, .nav-links a.active { color: #000; }
         
-        .section-container { padding: 120px 5% 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-container { padding: 140px 5% 60px 5%; max-width: 1200px; margin: 0 auto; }
         .section-title { font-size: 2rem; font-weight: 300; letter-spacing: -0.5px; margin-bottom: 50px; position: relative; padding-bottom: 12px; text-transform: uppercase; }
         .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background-color: #1a1a1a; }
         
@@ -34,15 +37,18 @@
         
         footer { background: #111111; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 80px; }
         footer p { font-size: 0.85rem; color: #777; font-weight: 300; }
-        @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; position: relative; } .section-container { padding-top: 40px; } .projects-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .navbar { flex-direction: column; gap: 10px; text-align: center; padding: 15px; position: relative; } .section-container { padding-top: 40px; } .projects-grid { grid-template-columns: 1fr; } .nav-logo { align-items: center; } }
     </style>
 </head>
 <body>
 
     <header class="navbar">
-        <h2><a href="index.html">FABIÁN GUAMANÍ ALDAZ</a></h2>
+        <div class="nav-logo">
+            <h2><a href="index.html">FABIÁN GUAMANÍ ALDAZ</a></h2>
+            <span>2D Animator & Filmmaker</span>
+        </div>
         <nav class="nav-links">
-            <a href="independent-films.html">Independent Projects</a>
+            <a href="independent-films.html">Films & Series</a>
             <a href="motion-graphics.html" class="active">Motion & Explainers</a>
             <a href="bio.html">Bio</a>
             <a href="contact.html">Contact</a>
@@ -53,22 +59,21 @@
         <h2 class="section-title">Motion Graphics & Explainer Videos</h2>
         <div class="projects-grid">
             
-            <!-- Generé bloques limpios listos para clonar/cambiar links -->
             <!-- Tarjeta 1 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1014287027?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
+                    <h3>Archi - Les Petits Architectes</h3>
                     <p class="subtitle">Animator & Illustrator</p>
                 </div>
             </article>
 
-            <!-- Tarjeta 2 (Sheaghe) -->
+            <!-- Tarjeta 2 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/578525711?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
                     <h3>Sheaghe (MAC Georgia)</h3>
@@ -76,13 +81,13 @@
                 </div>
             </article>
 
-            <!-- Tarjeta 3 (Repetidas hasta completar la grilla) -->
+            <!-- Tarjeta 3 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1210732399?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
+                    <h3>Hum Capital Smart Raise</h3>
                     <p class="subtitle">Animator & Illustrator</p>
                 </div>
             </article>
@@ -90,21 +95,21 @@
             <!-- Tarjeta 4 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1140162850?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
-                    <p class="subtitle">Animator & Illustrator</p>
+                    <h3>Motor Transport Managers</h3>
+                    <p class="subtitle">Animator</p>
                 </div>
             </article>
 
             <!-- Tarjeta 5 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/578548042?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
+                    <h3>UPN-Albuquerque Explainer Video</h3>
                     <p class="subtitle">Animator & Illustrator</p>
                 </div>
             </article>
@@ -112,10 +117,10 @@
             <!-- Tarjeta 6 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/578546646?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
+                    <h3>Schneider Consulting Explainer Video</h3>
                     <p class="subtitle">Animator & Illustrator</p>
                 </div>
             </article>
@@ -123,10 +128,10 @@
             <!-- Tarjeta 7 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1210732403?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
+                    <h3>Moirge</h3>
                     <p class="subtitle">Animator & Illustrator</p>
                 </div>
             </article>
@@ -134,10 +139,10 @@
             <!-- Tarjeta 8 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1210732402?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
+                    <h3>UPN Fiber</h3>
                     <p class="subtitle">Animator & Illustrator</p>
                 </div>
             </article>
@@ -145,10 +150,10 @@
             <!-- Tarjeta 9 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1132009825?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
+                    <h3>Schneider Electric</h3>
                     <p class="subtitle">Animator & Illustrator</p>
                 </div>
             </article>
@@ -156,10 +161,10 @@
             <!-- Tarjeta 10 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1000712129?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
+                    <h3>Peerlogic</h3>
                     <p class="subtitle">Animator & Illustrator</p>
                 </div>
             </article>
@@ -167,10 +172,10 @@
             <!-- Tarjeta 11 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/578548906?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
+                    <h3>Integrated Protein Technologies</h3>
                     <p class="subtitle">Animator & Illustrator</p>
                 </div>
             </article>
@@ -178,54 +183,10 @@
             <!-- Tarjeta 12 -->
             <article class="project-card">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/990885810?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3>Project Title</h3>
-                    <p class="subtitle">Animator & Illustrator</p>
-                </div>
-            </article>
-
-            <!-- Tarjeta 13 -->
-            <article class="project-card">
-                <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <h3>Project Title</h3>
-                    <p class="subtitle">Animator & Illustrator</p>
-                </div>
-            </article>
-
-            <!-- Tarjeta 14 -->
-            <article class="project-card">
-                <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <h3>Project Title</h3>
-                    <p class="subtitle">Animator & Illustrator</p>
-                </div>
-            </article>
-
-            <!-- Tarjeta 15 -->
-            <article class="project-card">
-                <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <h3>Project Title</h3>
-                    <p class="subtitle">Animator & Illustrator</p>
-                </div>
-            </article>
-
-            <!-- Tarjeta 16 -->
-            <article class="project-card">
-                <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/329537245?color=ffffff&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <h3>Project Title</h3>
+                    <h3>Shutterfly Iris</h3>
                     <p class="subtitle">Animator & Illustrator</p>
                 </div>
             </article>
