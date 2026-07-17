@@ -1,143 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Fabián Guamaní Aldaz</title>
-  
-  <!-- Tipografía Roboto (Limpia y moderna) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabián Guamaní Aldaz | Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html, body { height: 100%; }
+        body { 
+            display: flex; 
+            flex-direction: column; 
+            font-family: 'Roboto', sans-serif; 
+            background-color: #fbfbfb; 
+            color: #1a1a1a; 
+            line-height: 1.6; 
+        }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Navbar with Subtitle */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #eaeaea; padding: 14px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .nav-logo { display: flex; flex-direction: column; }
+        .nav-logo h2 { font-size: 1.1rem; letter-spacing: 0.5px; font-weight: 500; line-height: 1.2; }
+        .nav-logo span { font-size: 0.7rem; color: #777; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+        .nav-links a { margin-left: 25px; font-size: 0.85rem; font-weight: 500; color: #666; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover, .nav-links a.active { color: #000; }
+        
+        .main-wrapper { flex: 1 0 auto; }
+        
+        .section-container { padding: 200px 5% 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
+        .section-title { font-size: 2rem; font-weight: 300; letter-spacing: -0.5px; margin-bottom: 40px; position: relative; padding-bottom: 12px; text-transform: uppercase; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 40px; height: 2px; background-color: #1a1a1a; }
+        
+        .contact-content { margin-top: 20px; }
+        .contact-content p { font-size: 1.1rem; color: #555; font-weight: 300; margin-bottom: 15px; }
+        
+        /* --- CORRECCIÓN ENLACE DE EMAIL RESPONSIVO --- */
+        .email-link { 
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            max-width: 100%;
+            font-weight: 300; 
+            color: #1a1a1a; 
+            letter-spacing: -0.5px; 
+            transition: color 0.2s; 
+            
+            /* El tamaño se adapta suavemente en pantallas medianas/grandes */
+            font-size: clamp(1.2rem, 4.5vw, 1.8rem); 
+            
+            /* Asegura que el texto se rompa de manera limpia si el ancho del dispositivo es extremo */
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
+        .email-link:hover { color: #666; }
+        
+        footer { 
+            flex-shrink: 0;
+            background: #111111; 
+            color: #ffffff; 
+            text-align: center; 
+            padding: 40px 20px; 
+        }
+        footer p { font-size: 0.85rem; color: #777; font-weight: 300; }
+        
+        /* Ajustes de Media Queries */
+        @media (max-width: 768px) { 
+            .navbar { flex-direction: column; gap: 10px; text-align: center; padding: 15px; position: relative; } 
+            .section-container { padding-top: 40px; } 
+            .nav-logo { align-items: center; } 
+        }
 
-  <style>
-    /* Estilos Generales */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #0d0d0d; /* Fondo oscuro elegante */
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
+        /* --- CONTROL ESTRICTO PARA MÓVILES (Celulares en vertical) --- */
+        @media (max-width: 480px) {
+            .email-link {
+                /* Forzamos un tamaño compacto que quepa perfectamente y luzca estilizado en pantallas pequeñas */
+                font-size: 1.15rem !important;
+                letter-spacing: 0px;
+            }
+            .contact-content p {
+                font-size: 0.95rem; /* Ajuste sutil al párrafo descriptivo para mantener balance visual */
+            }
+        }
 
-    /* Contenedor de Contacto */
-    .contact-container {
-      width: 100%;
-      max-width: 600px;
-      padding: 40px 20px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    .contact-title {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: -0.5px;
-    }
-
-    .contact-description {
-      font-size: clamp(1rem, 3vw, 1.15rem);
-      font-weight: 300;
-      line-height: 1.6;
-      color: #a0a0a0;
-      margin-bottom: 40px;
-    }
-
-    /* --- Solución para el Correo Responsivo y Centrado --- */
-    .email-wrap {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto 40px auto;
-      padding: 0 15px; /* Un poco más de margen interno para asegurar el centrado */
-      box-sizing: border-box;
-    }
-
-    .contact-email {
-      display: inline-block;
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: 400;
-      transition: color 0.3s ease;
-      
-      /* Reducido: tamaño base más pequeño y progresión visual más controlada */
-      font-size: clamp(0.9rem, 3.8vw, 1.8rem); 
-      
-      /* Fuerza el centrado absoluto */
-      text-align: center;
-      word-wrap: break-word;
-      word-break: break-all;
-      overflow-wrap: break-word;
-      max-width: 100%;
-    }
-
-    .contact-email:hover {
-      color: #707070;
-    }
-
-    /* Enlaces a Redes / Portafolios */
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      color: #a0a0a0;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 400;
-      transition: color 0.3s ease;
-    }
-
-    .social-link:hover {
-      color: #ffffff;
-    }
-
-    /* --- AJUSTE ESTRICTO PARA MÓVILES --- */
-    /* Cubre la gran mayoría de teléfonos en posición vertical (ancho menor a 480px) */
-    @media (max-width: 480px) {
-      .contact-email {
-        /* Tamaño de fuente ultracompacto ideal para correos largos en pantallas pequeñas */
-        font-size: 0.85rem !important; 
-        letter-spacing: 0.5px;
-      }
-    }
-
-    /* Para teléfonos extremadamente pequeños (ancho menor a 340px) */
-    @media (max-width: 340px) {
-      .contact-email {
-        font-size: 0.75rem !important;
-      }
-    }
-  </style>
+        /* Dispositivos ultrachicos */
+        @media (max-width: 350px) {
+            .email-link {
+                font-size: 1rem !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <main class="contact-container">
-    <h1 class="contact-title">Let's work together</h1>
-    <p class="contact-description">
-      I’m always open to new freelance opportunities and creative collaborations, both in cinematic film and commercial motion. Drop me a line!
-    </p>
-    
-    <!-- Contenedor del correo electrónico -->
-    <div class="email-wrap">
-      <a href="mailto:tu-correo@dominio.com" class="contact-email">tu-correo@dominio.com</a>
+    <div class="main-wrapper">
+        <header class="navbar">
+            <div class="nav-logo">
+                <h2><a href="index.html">FABIÁN GUAMANÍ ALDAZ</a></h2>
+                <span>2D Animator & Filmmaker</span>
+            </div>
+            <nav class="nav-links">
+                <a href="independent-films.html">Films & Series</a>
+                <a href="motion-graphics.html">Motion & Explainers</a>
+                <a href="bio.html">Bio</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </header>
+
+        <main class="section-container">
+            <h2 class="section-title">Get in touch</h2>
+            <div class="contact-content">
+                <p>For project inquiries, freelance opportunities, or collaboration:</p>
+                <a href="mailto:fabianguamanialdaz@gmail.com" class="email-link">fabianguamanialdaz@gmail.com</a>
+            </div>
+        </main>
     </div>
 
-    <!-- Enlaces adicionales -->
-    <div class="social-links">
-      <a href="https://vimeo.com/" class="social-link" target="_blank" rel="noopener">Vimeo</a>
-      <a href="https://behance.net/" class="social-link" target="_blank" rel="noopener">Behance</a>
-      <a href="https://linkedin.com/" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </main>
+    <footer>
+        <p>© 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
