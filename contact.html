@@ -54,7 +54,7 @@
       width: 100%;
       max-width: 100%;
       margin: 0 auto 40px auto;
-      padding: 0 10px;
+      padding: 0 15px; /* Un poco más de margen interno para asegurar el centrado */
       box-sizing: border-box;
     }
 
@@ -65,10 +65,10 @@
       font-weight: 400;
       transition: color 0.3s ease;
       
-      /* Tamaño responsivo: se encoge automáticamente en celulares */
-      font-size: clamp(1.1rem, 4.5vw, 2.2rem); 
+      /* Reducido: tamaño base más pequeño y progresión visual más controlada */
+      font-size: clamp(0.9rem, 3.8vw, 1.8rem); 
       
-      /* Fuerza el centrado y evita desbordes en pantallas pequeñas */
+      /* Fuerza el centrado absoluto */
       text-align: center;
       word-wrap: break-word;
       word-break: break-all;
@@ -77,7 +77,7 @@
     }
 
     .contact-email:hover {
-      color: #707070; /* Cambio sutil al pasar el cursor */
+      color: #707070;
     }
 
     /* Enlaces a Redes / Portafolios */
@@ -100,10 +100,20 @@
       color: #ffffff;
     }
 
-    /* Ajuste extra estricto para pantallas muy pequeñas (menos de 360px de ancho) */
-    @media (max-width: 360px) {
+    /* --- AJUSTE ESTRICTO PARA MÓVILES --- */
+    /* Cubre la gran mayoría de teléfonos en posición vertical (ancho menor a 480px) */
+    @media (max-width: 480px) {
       .contact-email {
-        font-size: 1rem;
+        /* Tamaño de fuente ultracompacto ideal para correos largos en pantallas pequeñas */
+        font-size: 0.85rem !important; 
+        letter-spacing: 0.5px;
+      }
+    }
+
+    /* Para teléfonos extremadamente pequeños (ancho menor a 340px) */
+    @media (max-width: 340px) {
+      .contact-email {
+        font-size: 0.75rem !important;
       }
     }
   </style>
@@ -116,12 +126,12 @@
       I’m always open to new freelance opportunities and creative collaborations, both in cinematic film and commercial motion. Drop me a line!
     </p>
     
-    <!-- Contenedor del correo electrónico con protección de desborde -->
+    <!-- Contenedor del correo electrónico -->
     <div class="email-wrap">
       <a href="mailto:tu-correo@dominio.com" class="contact-email">tu-correo@dominio.com</a>
     </div>
 
-    <!-- Enlaces adicionales (puedes añadir tu Behance, Vimeo, LinkedIn, etc.) -->
+    <!-- Enlaces adicionales -->
     <div class="social-links">
       <a href="https://vimeo.com/" class="social-link" target="_blank" rel="noopener">Vimeo</a>
       <a href="https://behance.net/" class="social-link" target="_blank" rel="noopener">Behance</a>
