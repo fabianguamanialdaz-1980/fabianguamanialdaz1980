@@ -12,7 +12,7 @@
         body { font-family: 'Roboto', sans-serif; background-color: #fbfbfb; color: #1a1a1a; line-height: 1.6; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         
-        /* Hero Section (Ajustado sin contenedor de video) */
+        /* Hero Section */
         .hero-section { 
             display: flex; 
             flex-direction: column; 
@@ -23,17 +23,37 @@
             padding: 40px 20px; 
             background: #ffffff; 
         }
+        .hero-video-container { 
+            width: 100%; 
+            max-width: 1080px; 
+            aspect-ratio: 1920 / 600; 
+            position: relative; 
+            background: #000; 
+            border-radius: 6px; 
+            overflow: hidden; 
+            border: 1px solid #eaeaea; 
+            margin-bottom: 40px; 
+        }
+        .hero-video-container iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: 0; 
+            pointer-events: none; 
+        }
         .hero-section h1 { 
-            font-size: 3.5rem; 
+            font-size: 3.2rem; 
             font-weight: 300; 
             letter-spacing: -1px; 
-            margin-bottom: 24px; 
+            margin-bottom: 20px; 
             color: #111; 
         }
         .hero-section p { 
-            font-size: 1.25rem; 
+            font-size: 1.2rem; 
             color: #555; 
-            max-width: 650px; 
+            max-width: 600px; 
             margin-bottom: 45px; 
             font-weight: 300; 
             line-height: 1.7; 
@@ -66,15 +86,24 @@
         }
         
         @media (max-width: 768px) {
-            .hero-section h1 { font-size: 2.6rem; }
-            .hero-section p { font-size: 1.15rem; }
+            .hero-section h1 { font-size: 2.4rem; }
             .category-buttons { flex-direction: column; gap: 15px; }
+            .hero-section { min-height: 100vh; padding-top: 40px; }
         }
     </style>
 </head>
 <body>
 
     <section class="hero-section" id="welcome">
+        <div class="hero-video-container">
+            <iframe 
+                src="https://www.youtube-nocookie.com/embed/JYVw-MnfrQo?autoplay=1&mute=1&loop=1&playlist=JYVw-MnfrQo&controls=0&showinfo=0&rel=0&enablejsapi=1" 
+                title="Hero Reel Video"
+                allow="autoplay; encrypted-media; picture-in-picture" 
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
         <h1>Fabián Guamaní Aldaz</h1>
         <p>2D Animator and Independent Filmmaker specializing in character-driven digital 2D animation, original animated short films, and engaging motion graphics and explainer videos.</p>
         <div class="category-buttons">
