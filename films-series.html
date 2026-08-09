@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Films & Series | Fabián Guamaní Aldaz</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .card-thumbnail-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background-color: #1a1a1a;
+    }
+    .card-thumbnail-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .modal-vimeo-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+    }
+    .modal-vimeo-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-wrapper">
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="nav-logo">
+        <h2><a href="index.html">Fabián Guamaní Aldaz</a></h2>
+        <span>2D Animator & Filmmaker</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="films-series.html" class="active">Films & Series</a>
+        <a href="motion-explainers.html">Motion & Explainers</a>
+        <a href="bio.html">Bio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-container">
+      <h1 class="page-title">Films & Series</h1>
+
+      <!-- Grid de Proyectos -->
+      <div class="projects-grid">
+
+        <!-- 1. Ugamú -->
+        <div class="project-card" onclick="openModal('Ugamú', 'TV Series | 2D Digital', '<p>When Ugamu began to be Oscar\'s imaginary friend, he never thought that he would spend so much time with him. Now Oscar is 15 years old and Ugamu is desperate.</p><p><strong>Credits:</strong> Original Concept, Direction Development, Script & Animation by Fabián Guamaní Aldaz.</p><p><strong>Distinctions:</strong> Winning Project at MIFA Pitching Sessions (Annecy 2018), Ciclic Animation Residence (France 2019), and Best Animated Series Project at Animation Workshop Laboratory (Denmark 2016).</p>', '215218701')">
+          <div class="card-thumbnail-wrapper">
+            <img src="https://vumbnail.com/215218701.jpg" alt="Ugamú">
+          </div>
+          <div class="card-info">
+            <h3>Ugamú</h3>
+            <p>TV Series | 2D Digital</p>
+          </div>
+        </div>
+
+        <!-- 2. Frontera -->
+        <div class="project-card" onclick="openModal('Frontera / Border', 'Animated Short Film | 2D Digital | 2017', '<p>In a war-stricken territory, a child playing make-believe pretends that he\'s a soldier. One day, he meets a wounded soldier and decides to take care of him. Reality, however, soon comes and ends the game.</p><p><strong>Credits:</strong> Direction, Script and Animation by Fabián Guamaní Aldaz.</p><p><strong>Distinctions:</strong> Official Selection at Annecy International Film Festival (2017), Animation Festival Anima Latina (2017), International Animated Films Festival KROK (2017), Lisbon Animated Film Festival MONSTRA (2018), and Indie-AniFest (2019), etc.</p>', '329537245')">
+          <div class="card-thumbnail-wrapper">
+            <img src="https://vumbnail.com/329537245.jpg" alt="Frontera">
+          </div>
+          <div class="card-info">
+            <h3>Frontera</h3>
+            <p>Animated Short Film | 2017</p>
+          </div>
+        </div>
+
+        <!-- 3. Bibi da Lolo -->
+        <div class="project-card" onclick="openModal('Bibi da Lolo', 'Children Web Series Project | 2D Animation | 2022', '<p>Bunny twins Bibi and Lolo explore the world through fun everyday adventures, making new friends and inviting young audiences to learn and play alongside them through engaging, interactive activities.</p><p><strong>Credits:</strong> Created, Directed and Animated by Fabián Guamaní Aldaz. Produced by World Vision Georgia.</p>', '1012374535')">
+          <div class="card-thumbnail-wrapper">
+            <img src="https://vumbnail.com/1012374535.jpg" alt="Bibi da Lolo">
+          </div>
+          <div class="card-info">
+            <h3>Bibi da Lolo</h3>
+            <p>Children Web Series | 2022</p>
+          </div>
+        </div>
+
+        <!-- 4. Gran Lago -->
+        <div class="project-card" onclick="openModal('Gran Lago / Big Lake', 'Short Film | 2D Digital | 2024', '<p>Many generations of fishermen have lived around a lake keeping a vital connection with it. A drought dries up the lake and fishermen set on a journey to faraway lands. Only one decides to stay. He knows the lake\'s destiny is his destiny too.</p><p><strong>Credits:</strong> Script, Direction, Concept Art & Animation by Fabián Guamaní Aldaz.</p><p><strong>Distinctions:</strong> MIFA Pitching Sessions - Animation du Monde, Annecy International Film Festival, 2020.</p>', '1106889088')">
+          <div class="card-thumbnail-wrapper">
+            <img src="https://vumbnail.com/1106889088.jpg" alt="Gran Lago">
+          </div>
+          <div class="card-info">
+            <h3>Gran Lago</h3>
+            <p>Short Film | 2D Digital | 2024</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div id="project-modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(null, true)">&times;</button>
+      <div class="modal-body">
+        <div class="modal-vimeo-container">
+          <iframe id="modal-vimeo-iframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+        <div class="modal-details">
+          <h2 id="modal-title"></h2>
+          <span id="modal-category" class="badge"></span>
+          <div id="modal-description" class="modal-text-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openModal(title, category, htmlDescription, vimeoId) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-category').textContent = category;
+      document.getElementById('modal-description').innerHTML = htmlDescription;
+      const iframe = document.getElementById('modal-vimeo-iframe');
+      iframe.src = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0`;
+      document.getElementById('project-modal').classList.add('active');
+    }
+
+    function closeModal(event, force = false) {
+      if (force || (event && event.target.classList.contains('modal-overlay'))) {
+        const modal = document.getElementById('project-modal');
+        const iframe = document.getElementById('modal-vimeo-iframe');
+        iframe.src = '';
+        modal.classList.remove('active');
+      }
+    }
+  </script>
+
+</body>
+</html>
