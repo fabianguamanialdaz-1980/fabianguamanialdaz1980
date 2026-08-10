@@ -36,6 +36,10 @@
       height: 100%;
       border: 0;
     }
+    /* Estilo para incrementar la separación con la cuadrícula */
+    .motion-grid-spaced {
+      margin-top: 60px !important;
+    }
   </style>
 </head>
 <body>
@@ -70,10 +74,11 @@
             🔊 Unmute
           </button>
         </div>
+        <p class="hero-caption">Showreel 2026</p>
       </section>
 
-      <!-- Grid de 16 Proyectos (4 Columnas) -->
-      <div class="motion-grid">
+      <!-- Grid de 16 Proyectos (4 Columnas con doble separación) -->
+      <div class="motion-grid motion-grid-spaced">
 
         <!-- 1. UPN Fiber -->
         <div class="project-card" onclick="openModal('UPN Fiber', 'Motion Graphics', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1210732402')">
