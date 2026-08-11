@@ -36,6 +36,12 @@
       height: 100%;
       border: 0;
     }
+    .modal-category-text {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
   </style>
 </head>
 <body>
@@ -56,54 +62,40 @@
       </nav>
     </header>
 
-    <!-- Contenido Principal -->
-    <main class="main-container">
-      <h1 class="page-title">Films & Series</h1>
+    <!-- Contenido Principal Full Width -->
+    <main class="main-container full-width-container">
+      <div class="section-title-wrapper">
+        <h1 class="page-title">Films & Series</h1>
+      </div>
 
-      <!-- Grid de Proyectos -->
-      <div class="projects-grid">
+      <!-- Grid de 2 Columnas Sin Espacios (Full Width) -->
+      <div class="films-grid-seamless">
 
         <!-- 1. Ugamú -->
-        <div class="project-card" onclick="openModal('Ugamú', 'TV Series | 2D Digital', '<p>When Ugamu began to be Oscar\'s imaginary friend, he never thought that he would spend so much time with him. Now Oscar is 15 years old and Ugamu is desperate.</p><p><strong>Credits:</strong> Original Concept, Direction Development, Script & Animation by Fabián Guamaní Aldaz.</p><p><strong>Distinctions:</strong> Winning Project at MIFA Pitching Sessions (Annecy 2018), Ciclic Animation Residence (France 2019), and Best Animated Series Project at Animation Workshop Laboratory (Denmark 2016).</p>', '215218701')">
+        <div class="project-card seamless-card" onclick="openModal('Ugamú', 'TV Series | 2D Digital', '<p>When Ugamu began to be Oscar\'s imaginary friend, he never thought that he would spend so much time with him. Now Oscar is 15 years old and Ugamu is desperate.</p><p><strong>Credits:</strong> Original Concept, Direction Development, Script & Animation by Fabián Guamaní Aldaz.</p><p><strong>Distinctions:</strong> Winning Project at MIFA Pitching Sessions (Annecy 2018), Ciclic Animation Residence (France 2019), and Best Animated Series Project at Animation Workshop Laboratory (Denmark 2016).</p>', '215218701')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/215218701.jpg" alt="Ugamú">
-          </div>
-          <div class="card-info">
-            <h3>Ugamú</h3>
-            <p>TV Series | 2D Digital</p>
           </div>
         </div>
 
         <!-- 2. Frontera -->
-        <div class="project-card" onclick="openModal('Frontera / Border', 'Animated Short Film | 2D Digital | 2017', '<p>In a war-stricken territory, a child playing make-believe pretends that he\'s a soldier. One day, he meets a wounded soldier and decides to take care of him. Reality, however, soon comes and ends the game.</p><p><strong>Credits:</strong> Direction, Script and Animation by Fabián Guamaní Aldaz.</p><p><strong>Distinctions:</strong> Official Selection at Annecy International Film Festival (2017), Animation Festival Anima Latina (2017), International Animated Films Festival KROK (2017), Lisbon Animated Film Festival MONSTRA (2018), and Indie-AniFest (2019), etc.</p>', '329537245')">
+        <div class="project-card seamless-card" onclick="openModal('Frontera / Border', 'Animated Short Film | 2D Digital | 2017', '<p>In a war-stricken territory, a child playing make-believe pretends that he\'s a soldier. One day, he meets a wounded soldier and decides to take care of him. Reality, however, soon comes and ends the game.</p><p><strong>Credits:</strong> Direction, Script and Animation by Fabián Guamaní Aldaz.</p><p><strong>Distinctions:</strong> Official Selection at Annecy International Film Festival (2017), Animation Festival Anima Latina (2017), International Animated Films Festival KROK (2017), Lisbon Animated Film Festival MONSTRA (2018), and Indie-AniFest (2019), etc.</p>', '329537245')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/329537245.jpg" alt="Frontera">
-          </div>
-          <div class="card-info">
-            <h3>Frontera</h3>
-            <p>Animated Short Film | 2017</p>
           </div>
         </div>
 
         <!-- 3. Bibi da Lolo -->
-        <div class="project-card" onclick="openModal('Bibi da Lolo', 'Children Web Series Project | 2D Animation | 2022', '<p>Bunny twins Bibi and Lolo explore the world through fun everyday adventures, making new friends and inviting young audiences to learn and play alongside them through engaging, interactive activities.</p><p><strong>Credits:</strong> Created, Directed and Animated by Fabián Guamaní Aldaz. Produced by World Vision Georgia.</p>', '1012374535')">
+        <div class="project-card seamless-card" onclick="openModal('Bibi da Lolo', 'Children Web Series Project | 2D Animation | 2022', '<p>Bunny twins Bibi and Lolo explore the world through fun everyday adventures, making new friends and inviting young audiences to learn and play alongside them through engaging, interactive activities.</p><p><strong>Credits:</strong> Created, Directed and Animated by Fabián Guamaní Aldaz. Produced by World Vision Georgia.</p>', '1012374535')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1012374535.jpg" alt="Bibi da Lolo">
-          </div>
-          <div class="card-info">
-            <h3>Bibi da Lolo</h3>
-            <p>Children Web Series | 2022</p>
           </div>
         </div>
 
         <!-- 4. Gran Lago -->
-        <div class="project-card" onclick="openModal('Gran Lago / Big Lake', 'Short Film | 2D Digital | 2024', '<p>Many generations of fishermen have lived around a lake keeping a vital connection with it. A drought dries up the lake and fishermen set on a journey to faraway lands. Only one decides to stay. He knows the lake\'s destiny is his destiny too.</p><p><strong>Credits:</strong> Script, Direction, Concept Art & Animation by Fabián Guamaní Aldaz.</p><p><strong>Distinctions:</strong> MIFA Pitching Sessions - Animation du Monde, Annecy International Film Festival, 2020.</p>', '1106889088')">
+        <div class="project-card seamless-card" onclick="openModal('Gran Lago / Big Lake', 'Short Film | 2D Digital | 2024', '<p>Many generations of fishermen have lived around a lake keeping a vital connection with it. A drought dries up the lake and fishermen set on a journey to faraway lands. Only one decides to stay. He knows the lake\'s destiny is his destiny too.</p><p><strong>Credits:</strong> Script, Direction, Concept Art & Animation by Fabián Guamaní Aldaz.</p><p><strong>Distinctions:</strong> MIFA Pitching Sessions - Animation du Monde, Annecy International Film Festival, 2020.</p>', '1106889088')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1106889088.jpg" alt="Gran Lago">
-          </div>
-          <div class="card-info">
-            <h3>Gran Lago</h3>
-            <p>Short Film | 2D Digital | 2024</p>
           </div>
         </div>
 
@@ -113,7 +105,7 @@
 
   <!-- Modal Overlay -->
   <div id="project-modal" class="modal-overlay" onclick="closeModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal-content fullscreen-modal" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal(null, true)">&times;</button>
       <div class="modal-body">
         <div class="modal-vimeo-container">
@@ -121,16 +113,12 @@
         </div>
         <div class="modal-details">
           <h2 id="modal-title"></h2>
-          <span id="modal-category" class="badge"></span>
+          <p id="modal-category" class="modal-category-text"></p>
           <div id="modal-description" class="modal-text-content"></div>
         </div>
       </div>
     </div>
   </div>
-
-  <footer>
-    <p>&copy; 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
-  </footer>
 
   <script>
     function openModal(title, category, htmlDescription, vimeoId) {

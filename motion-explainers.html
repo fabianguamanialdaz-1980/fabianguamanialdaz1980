@@ -36,10 +36,6 @@
       height: 100%;
       border: 0;
     }
-    /* Estilo para incrementar la separación con la cuadrícula */
-    .motion-grid-spaced {
-      margin-top: 60px !important;
-    }
   </style>
 </head>
 <body>
@@ -60,11 +56,13 @@
       </nav>
     </header>
 
-    <!-- Contenido Principal -->
-    <main class="main-container">
-      <h1 class="page-title">Motion & Explainers</h1>
+    <!-- Contenido Principal Full Width -->
+    <main class="main-container full-width-container">
+      <div class="section-title-wrapper">
+        <h1 class="page-title">Motion & Explainers</h1>
+      </div>
 
-      <!-- Showreel Full Width -->
+      <!-- Showreel Full Width (1920x640) -->
       <section class="showreel-section">
         <div class="showreel-wrapper">
           <video id="motion-showreel-player" autoplay loop muted playsinline class="showreel-video">
@@ -77,166 +75,146 @@
         <p class="hero-caption">Showreel 2026</p>
       </section>
 
-      <!-- Grid de 16 Proyectos (4 Columnas con doble separación) -->
-      <div class="motion-grid motion-grid-spaced">
+      <!-- Grid de 5 Columnas Pegadas (20 Proyectos) -->
+      <div class="motion-grid-5col">
 
         <!-- 1. UPN Fiber -->
-        <div class="project-card" onclick="openModal('UPN Fiber', 'Motion Graphics', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1210732402')">
+        <div class="project-card seamless-card" onclick="openModal('UPN Fiber', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1210732402')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1210732402.jpg" alt="UPN Fiber">
-          </div>
-          <div class="card-info">
-            <h3>UPN Fiber</h3>
           </div>
         </div>
 
         <!-- 2. Lui c'est Archi -->
-        <div class="project-card" onclick="openModal('Lui c\'est Archi', 'Motion Graphics', '<p><strong>Role:</strong> Illustration and Animation.</p><p><strong>Client:</strong> Les Petits Architectes, France.</p>', '1014287027')">
+        <div class="project-card seamless-card" onclick="openModal('Lui c\'est Archi', '<p><strong>Role:</strong> Illustration and Animation.</p><p><strong>Client:</strong> Les Petits Architectes, France.</p>', '1014287027')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1014287027.jpg" alt="Lui c'est Archi">
-          </div>
-          <div class="card-info">
-            <h3>Lui c'est Archi</h3>
           </div>
         </div>
 
         <!-- 3. Sheaghe -->
-        <div class="project-card" onclick="openModal('Sheaghe', 'Motion Graphics', '<p><strong>Role:</strong> Illustration and Animation.</p><p><strong>Client:</strong> MAC Georgia.</p>', '578525711')">
+        <div class="project-card seamless-card" onclick="openModal('Sheaghe', '<p><strong>Role:</strong> Illustration and Animation.</p><p><strong>Client:</strong> MAC Georgia.</p>', '578525711')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/578525711.jpg" alt="Sheaghe">
-          </div>
-          <div class="card-info">
-            <h3>Sheaghe</h3>
           </div>
         </div>
 
         <!-- 4. Hum Capital Smart Raise -->
-        <div class="project-card" onclick="openModal('Hum Capital Smart Raise', 'Explainer', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1210732399')">
+        <div class="project-card seamless-card" onclick="openModal('Hum Capital Smart Raise', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1210732399')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1210732399.jpg" alt="Hum Capital Smart Raise">
-          </div>
-          <div class="card-info">
-            <h3>Hum Capital Smart Raise</h3>
           </div>
         </div>
 
         <!-- 5. Motor Transport Managers -->
-        <div class="project-card" onclick="openModal('Motor Transport Managers', 'Explainer', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '990886470')">
+        <div class="project-card seamless-card" onclick="openModal('Motor Transport Managers', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '990886470')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/990886470.jpg" alt="Motor Transport Managers">
-          </div>
-          <div class="card-info">
-            <h3>Motor Transport Managers</h3>
           </div>
         </div>
 
         <!-- 6. UPN-Albuquerque -->
-        <div class="project-card" onclick="openModal('UPN-Albuquerque', 'Motion Graphics', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '578548042')">
+        <div class="project-card seamless-card" onclick="openModal('UPN-Albuquerque', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '578548042')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/578548042.jpg" alt="UPN-Albuquerque">
-          </div>
-          <div class="card-info">
-            <h3>UPN-Albuquerque</h3>
           </div>
         </div>
 
         <!-- 7. Schneider Consulting -->
-        <div class="project-card" onclick="openModal('Schneider Consulting', 'Explainer', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '578546646')">
+        <div class="project-card seamless-card" onclick="openModal('Schneider Consulting', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '578546646')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/578546646.jpg" alt="Schneider Consulting">
-          </div>
-          <div class="card-info">
-            <h3>Schneider Consulting</h3>
           </div>
         </div>
 
         <!-- 8. Moirge -->
-        <div class="project-card" onclick="openModal('Moirge', '2D Animation', '<p><strong>Role:</strong> Illustration and Animation.</p><p><strong>Client:</strong> MAC Georgia.</p>', '1210732403')">
+        <div class="project-card seamless-card" onclick="openModal('Moirge', '<p><strong>Role:</strong> Illustration and Animation.</p><p><strong>Client:</strong> MAC Georgia.</p>', '1210732403')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1210732403.jpg" alt="Moirge">
-          </div>
-          <div class="card-info">
-            <h3>Moirge</h3>
           </div>
         </div>
 
         <!-- 9. Digital Solutions - Logistics Manager PRO -->
-        <div class="project-card" onclick="openModal('Digital Solutions - Logistics Manager PRO', 'Explainer', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1216502072')">
+        <div class="project-card seamless-card" onclick="openModal('Digital Solutions - Logistics Manager PRO', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1216502072')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1216502072.jpg" alt="Digital Solutions - Logistics Manager PRO">
-          </div>
-          <div class="card-info">
-            <h3>Digital Solutions - Logistics Manager PRO</h3>
           </div>
         </div>
 
         <!-- 10. Schneider Electric -->
-        <div class="project-card" onclick="openModal('Schneider Electric', 'Motion Graphics', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1132009825')">
+        <div class="project-card seamless-card" onclick="openModal('Schneider Electric', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1132009825')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1132009825.jpg" alt="Schneider Electric">
-          </div>
-          <div class="card-info">
-            <h3>Schneider Electric</h3>
           </div>
         </div>
 
         <!-- 11. Peerlogic -->
-        <div class="project-card" onclick="openModal('Peerlogic', 'Explainer', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1000712129')">
+        <div class="project-card seamless-card" onclick="openModal('Peerlogic', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1000712129')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1000712129.jpg" alt="Peerlogic">
-          </div>
-          <div class="card-info">
-            <h3>Peerlogic</h3>
           </div>
         </div>
 
         <!-- 12. Integrated Protein Technologies -->
-        <div class="project-card" onclick="openModal('Integrated Protein Technologies', 'Motion Graphics', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '578548906')">
+        <div class="project-card seamless-card" onclick="openModal('Integrated Protein Technologies', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '578548906')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/578548906.jpg" alt="Integrated Protein Technologies">
-          </div>
-          <div class="card-info">
-            <h3>Integrated Protein Technologies</h3>
           </div>
         </div>
 
         <!-- 13. Shutterfly Iris -->
-        <div class="project-card" onclick="openModal('Shutterfly Iris', 'Motion Graphics', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '990885810')">
+        <div class="project-card seamless-card" onclick="openModal('Shutterfly Iris', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '990885810')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/990885810.jpg" alt="Shutterfly Iris">
-          </div>
-          <div class="card-info">
-            <h3>Shutterfly Iris</h3>
           </div>
         </div>
 
         <!-- 14. Tidal Migrations -->
-        <div class="project-card" onclick="openModal('Tidal Migrations', 'Explainer', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1216502340')">
+        <div class="project-card seamless-card" onclick="openModal('Tidal Migrations', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1216502340')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1216502340.jpg" alt="Tidal Migrations">
-          </div>
-          <div class="card-info">
-            <h3>Tidal Migrations</h3>
           </div>
         </div>
 
         <!-- 15. Grand Slam Verdicts -->
-        <div class="project-card" onclick="openModal('Grand Slam Verdicts', 'Explainer', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1000713168')">
+        <div class="project-card seamless-card" onclick="openModal('Grand Slam Verdicts', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1000713168')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1000713168.jpg" alt="Grand Slam Verdicts">
-          </div>
-          <div class="card-info">
-            <h3>Grand Slam Verdicts</h3>
           </div>
         </div>
 
         <!-- 16. Motor Transport Managers-2 -->
-        <div class="project-card" onclick="openModal('Motor Transport Managers-2', 'Explainer', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1140162850')">
+        <div class="project-card seamless-card" onclick="openModal('Motor Transport Managers-2', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1140162850')">
           <div class="card-thumbnail-wrapper">
             <img src="https://vumbnail.com/1140162850.jpg" alt="Motor Transport Managers-2">
           </div>
-          <div class="card-info">
-            <h3>Motor Transport Managers-2</h3>
+        </div>
+
+        <!-- 17. San Mateo Credit Union - Conversion -->
+        <div class="project-card seamless-card" onclick="openModal('San Mateo Credit Union - Conversion', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '578547557')">
+          <div class="card-thumbnail-wrapper">
+            <img src="https://vumbnail.com/578547557.jpg" alt="Project 17">
+          </div>
+        </div>
+
+        <!-- 18. Access Home Care Revised -->
+        <div class="project-card seamless-card" onclick="openModal('Access Home Care Revised', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1133894185')">
+          <div class="card-thumbnail-wrapper">
+            <img src="https://vumbnail.com/1133894185.jpg" alt="Project 18">
+          </div>
+        </div>
+
+        <!-- 19. Watermellon Org. -->
+        <div class="project-card seamless-card" onclick="openModal('Watermellon Org.', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '990884979')">
+          <div class="card-thumbnail-wrapper">
+            <img src="https://vumbnail.com/990884979.jpg" alt="Project 19">
+          </div>
+        </div>
+
+        <!-- 20. S!Y Communications, Inc. - Profile -->
+        <div class="project-card seamless-card" onclick="openModal('S!Y Communications, Inc. - Profile', '<p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p>', '1216502339')">
+          <div class="card-thumbnail-wrapper">
+            <img src="https://vumbnail.com/1216502339.jpg" alt="Project 20">
           </div>
         </div>
 
@@ -246,7 +224,7 @@
 
   <!-- Modal Overlay -->
   <div id="project-modal" class="modal-overlay" onclick="closeModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal-content fullscreen-modal" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal(null, true)">&times;</button>
       <div class="modal-body">
         <div class="modal-vimeo-container">
@@ -254,16 +232,11 @@
         </div>
         <div class="modal-details">
           <h2 id="modal-title"></h2>
-          <span id="modal-category" class="badge"></span>
           <div id="modal-description" class="modal-text-content"></div>
         </div>
       </div>
     </div>
   </div>
-
-  <footer>
-    <p>&copy; 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
-  </footer>
 
   <script>
     function toggleSound(videoId, btnId) {
@@ -278,9 +251,8 @@
       }
     }
 
-    function openModal(title, category, htmlDescription, vimeoId) {
+    function openModal(title, htmlDescription, vimeoId) {
       document.getElementById('modal-title').textContent = title;
-      document.getElementById('modal-category').textContent = category;
       document.getElementById('modal-description').innerHTML = htmlDescription;
       const iframe = document.getElementById('modal-vimeo-iframe');
       iframe.src = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0`;
