@@ -56,23 +56,26 @@ a {
   flex-direction: column;
 }
 
+/* Reducido al 60% (original 1.1rem -> ~0.66rem) */
 .nav-logo h2 {
-  font-size: 1.1rem;
+  font-size: 0.66rem;
   letter-spacing: 0.5px;
   font-weight: 500;
   line-height: 1.2;
 }
 
+/* Reducido al 60% (original 0.75rem -> 0.45rem) */
 .nav-logo span {
-  font-size: 0.75rem;
+  font-size: 0.45rem;
   color: #888;
   font-weight: 400;
   margin-top: 2px;
 }
 
+/* Reducido al 60% (original 0.85rem -> 0.51rem) */
 .nav-links a {
   margin-left: 25px;
-  font-size: 0.85rem;
+  font-size: 0.51rem;
   font-weight: 500;
   color: #888;
   transition: color 0.3s;
@@ -119,8 +122,9 @@ a {
   padding: 0 20px;
 }
 
+/* Reducido al 60% (original 2rem -> 1.2rem) */
 .page-title, .section-title {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: -0.5px;
   margin-bottom: 24px;
@@ -167,8 +171,9 @@ a {
   display: block;
 }
 
+/* Reducido al 60% (original 0.8rem -> 0.48rem) */
 .hero-caption {
-  font-size: 0.8rem;
+  font-size: 0.48rem;
   color: #888;
   text-align: center;
   margin-top: 10px;
@@ -177,6 +182,7 @@ a {
   font-weight: 300;
 }
 
+/* Reducido al 60% (original 0.75rem -> 0.45rem) */
 .sound-btn {
   position: absolute;
   bottom: 16px;
@@ -184,9 +190,9 @@ a {
   background: rgba(0, 0, 0, 0.65);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 6px 14px;
+  padding: 4px 10px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.45rem;
   font-weight: 500;
   cursor: pointer;
   backdrop-filter: blur(4px);
@@ -206,16 +212,18 @@ a {
   text-align: center;
 }
 
+/* Reducido al 60% (original 2.2rem -> ~1.32rem) */
 .bio-section h1 {
-  font-size: 2.2rem;
+  font-size: 1.32rem;
   font-weight: 400;
   margin-bottom: 10px;
 }
 
+/* Reducido al 60% (original 1.05rem -> 0.63rem) */
 .hero-subtitle {
   max-width: 920px;
   margin: 0 auto;
-  font-size: 1.05rem;
+  font-size: 0.63rem;
   color: #ccc;
   font-weight: 300;
   line-height: 1.5;
@@ -229,9 +237,10 @@ a {
   margin-top: 20px;
 }
 
+/* Reducido al 60% (original 0.85rem -> 0.51rem) */
 .hero-btn {
-  padding: 10px 22px;
-  font-size: 0.85rem;
+  padding: 6px 14px;
+  font-size: 0.51rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -287,8 +296,9 @@ a {
   filter: brightness(1.15);
 }
 
+/* Reducido al 60% (original 1.05rem -> 0.63rem) */
 .bio-content p {
-  font-size: 1.05rem;
+  font-size: 0.63rem;
   color: #ccc;
   font-weight: 300;
   margin-bottom: 25px;
@@ -304,13 +314,15 @@ a {
   transform: translateX(-50%);
 }
 
+/* Reducido al 60% (original 1.05rem -> 0.63rem) */
 .contact-content p {
-  font-size: 1.05rem;
+  font-size: 0.63rem;
   color: #aaa;
   font-weight: 300;
   margin-bottom: 20px;
 }
 
+/* Reducido al 60% */
 .email-link {
   display: inline-block;
   text-align: center;
@@ -319,7 +331,7 @@ a {
   color: #fff;
   letter-spacing: -0.5px;
   transition: color 0.2s;
-  font-size: clamp(1.2rem, 4.5vw, 1.8rem);
+  font-size: clamp(0.72rem, 2.7vw, 1.08rem);
   word-wrap: break-word;
   word-break: break-all;
 }
@@ -330,6 +342,7 @@ a {
 
 /* ==========================================================================
    Modal Expandido en Ancho Completo + Flechas
+   (Mantiene el tamaño original de la información del video intacto)
    ========================================================================== */
 .modal-overlay {
   display: none;
@@ -385,6 +398,7 @@ a {
   overflow-y: auto;
 }
 
+/* Se mantiene el tamaño original intacto para la información del video modal */
 .modal-details h2 {
   font-size: 1.5rem;
   font-weight: 500;
@@ -409,7 +423,6 @@ a {
   font-weight: 500;
 }
 
-/* Flechas de Navegación Lateral */
 .modal-nav {
   position: absolute;
   top: 50%;
@@ -454,8 +467,9 @@ footer {
   padding: 30px 20px;
 }
 
+/* Reducido al 60% (original 0.85rem -> 0.51rem) */
 footer p {
-  font-size: 0.85rem;
+  font-size: 0.51rem;
   font-weight: 300;
 }
 
@@ -474,14 +488,21 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  /* Corrección del menú fijo y del espacio para el video hero en móviles */
   .navbar {
     flex-direction: column;
     gap: 10px;
     text-align: center;
     padding: 15px;
   }
+  
+  /* Ajuste de margen superior para evitar que la navbar tape el video del Hero */
+  #home {
+    padding-top: 110px;
+  }
+
   .nav-links a {
-    margin: 0 10px;
+    margin: 0 8px;
   }
   .hero-section, .showreel-section {
     margin-top: 0;
@@ -495,6 +516,9 @@ footer p {
 }
 
 @media (max-width: 480px) {
+  #home {
+    padding-top: 125px;
+  }
   .motion-grid-5col {
     grid-template-columns: 1fr;
   }
