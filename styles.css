@@ -6,8 +6,12 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -30,7 +34,7 @@ a {
 }
 
 /* ==========================================================================
-   Navbar
+   Navbar Fixed
    ========================================================================== */
 .navbar {
   position: fixed;
@@ -82,25 +86,29 @@ a {
 }
 
 /* ==========================================================================
-   Contenedores Principales
+   Secciones Single Page
    ========================================================================== */
+.page-section {
+  padding-top: 70px;
+}
+
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 110px 20px 60px 20px;
+  padding: 60px 20px;
 }
 
 .full-width-container {
   max-width: 100% !important;
-  padding: 110px 0 60px 0 !important;
+  padding: 60px 0 !important;
 }
 
 .home-container {
-  padding-top: 25px;
+  padding-top: 40px;
 }
 
 .section-container {
-  padding: 130px 5% 60px 5%;
+  padding: 80px 5% 60px 5%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -132,14 +140,14 @@ a {
 }
 
 /* ==========================================================================
-   Hero & Showreel (Aspect Ratio 1920 / 640)
+   Hero & Showreel (1920 / 640)
    ========================================================================== */
 .hero-section,
 .showreel-section {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  margin-top: 60px;
+  margin-top: 10px;
   overflow: hidden;
   background-color: #000;
 }
@@ -169,7 +177,6 @@ a {
   font-weight: 300;
 }
 
-/* Botón de Sonido Flotante sobre Video */
 .sound-btn {
   position: absolute;
   bottom: 16px;
@@ -193,11 +200,10 @@ a {
 }
 
 /* ==========================================================================
-   Home / Bio Intro
+   Bio Intro & Grids
    ========================================================================== */
 .bio-section {
   text-align: center;
-  margin-top: 0;
 }
 
 .bio-section h1 {
@@ -240,9 +246,6 @@ a {
   color: #0d0d0d;
 }
 
-/* ==========================================================================
-   Grillas Full Width sin Espacios (Seamless Grids)
-   ========================================================================== */
 .films-grid-seamless {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -284,9 +287,6 @@ a {
   filter: brightness(1.15);
 }
 
-/* ==========================================================================
-   Biografía Completa & Contacto
-   ========================================================================== */
 .bio-content p {
   font-size: 1.05rem;
   color: #ccc;
@@ -329,7 +329,7 @@ a {
 }
 
 /* ==========================================================================
-   Modal Overlay & Ajuste Proporcional de Altura
+   Modal Expandido en Ancho Completo + Flechas
    ========================================================================== */
 .modal-overlay {
   display: none;
@@ -342,32 +342,25 @@ a {
   z-index: 2000;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .modal-overlay.active {
   display: flex;
 }
 
-.modal-content {
-  background: #141414;
-  color: #fff;
-  width: 90%;
-  max-width: 1050px;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Modal Expandido con Altura Proporcional al Contenido */
 .modal-content.fullscreen-modal {
-  width: 94vw;
-  max-width: 1300px;
+  width: 98vw;
+  max-width: 1700px;
   height: auto;
-  max-height: 90vh;
+  max-height: 92vh;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
+  background: #141414;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .modal-close {
@@ -385,7 +378,7 @@ a {
 
 .modal-body {
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
+  grid-template-columns: 2.2fr 1fr;
   gap: 28px;
   padding: 32px;
   align-items: start;
@@ -416,8 +409,41 @@ a {
   font-weight: 500;
 }
 
+/* Flechas de Navegación Lateral */
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.modal-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+}
+
+.prev-btn {
+  left: 12px;
+}
+
+.next-btn {
+  right: 12px;
+}
+
 /* ==========================================================================
-   Footer
+   Footer & Responsividad
    ========================================================================== */
 footer {
   flex-shrink: 0;
@@ -433,9 +459,6 @@ footer p {
   font-weight: 300;
 }
 
-/* ==========================================================================
-   Responsividad & Dispositivos Móviles
-   ========================================================================== */
 @media (max-width: 1200px) {
   .motion-grid-5col {
     grid-template-columns: repeat(3, 1fr);
@@ -456,7 +479,6 @@ footer p {
     gap: 10px;
     text-align: center;
     padding: 15px;
-    position: relative;
   }
   .nav-links a {
     margin: 0 10px;

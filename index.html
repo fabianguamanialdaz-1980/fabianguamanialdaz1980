@@ -5,57 +5,502 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fabián Guamaní Aldaz | 2D Animator & Filmmaker</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos inline heredados para reproductores */
+    .card-thumbnail-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background-color: #1a1a1a;
+    }
+    .card-thumbnail-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .modal-vimeo-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+    }
+    .modal-vimeo-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .modal-category-text {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+  </style>
 </head>
 <body>
 
   <div class="main-wrapper">
-    <!-- Navbar -->
+    <!-- Navbar Fijo con Smooth Scroll -->
     <header class="navbar">
       <div class="nav-logo">
-        <h2><a href="index.html">Fabián Guamaní Aldaz</a></h2>
+        <h2><a href="#home">Fabián Guamaní Aldaz</a></h2>
         <span>2D Animator & Filmmaker</span>
       </div>
       <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="films-series.html">Films & Series</a>
-        <a href="motion-explainers.html">Motion & Explainers</a>
-        <a href="bio.html">Bio</a>
-        <a href="contact.html">Contact</a>
+        <a href="#home" class="nav-item active">Home</a>
+        <a href="#films-series" class="nav-item">Films & Series</a>
+        <a href="#motion-explainers" class="nav-item">Motion & Explainers</a>
+        <a href="#bio" class="nav-item">Bio</a>
+        <a href="#contact" class="nav-item">Contact</a>
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-video-wrapper">
-        <video id="hero-video-player" autoplay loop muted playsinline class="hero-video">
-          <source src="ugamu-header.mp4" type="video/mp4">
-        </video>
-        <button id="hero-sound-btn" class="sound-btn" onclick="toggleSound('hero-video-player', 'hero-sound-btn')">
-          🔊 Unmute
-        </button>
+    <!-- SECCIÓN 1: HOME -->
+    <section id="home" class="page-section">
+      <div class="hero-section">
+        <div class="hero-video-wrapper">
+          <video id="hero-video-player" autoplay loop muted playsinline class="hero-video">
+            <source src="ugamu-header.mp4" type="video/mp4">
+          </video>
+          <button id="hero-sound-btn" class="sound-btn" onclick="toggleSound('hero-video-player', 'hero-sound-btn')">
+            🔊 Unmute
+          </button>
+        </div>
+        <p class="hero-caption">
+          Extract of Ugamu, TV series project winner at MIFA Pitching Session-Annecy International Film Festival, 2018.
+        </p>
       </div>
-      <p class="hero-caption">
-        Extract of Ugamu, TV series project winner at MIFA Pitching Session-Annecy International Film Festival, 2018.
-      </p>
+
+      <main class="main-container home-container">
+        <section class="bio-section">
+          <h1>Fabián Guamaní Aldaz</h1>
+          <p class="hero-subtitle">
+            Creative Director, 2D Animator and Motion Graphic Designer with over a decade of experience crafting animated series, independent short films, and visual content.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#films-series" class="hero-btn">Films & Series</a>
+            <a href="#motion-explainers" class="hero-btn">Motion & Explainers</a>
+          </div>
+        </section>
+      </main>
     </section>
 
-    <!-- Main Content -->
-    <main class="main-container home-container">
-      <section class="bio-section">
-        <h1>Fabián Guamaní Aldaz</h1>
-        <p class="hero-subtitle">
-          Creative Director, 2D Animator and Motion Graphic Designer with over a decade of experience crafting animated series, independent short films, and visual content.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="films-series.html" class="hero-btn">Films & Series</a>
-          <a href="motion-explainers.html" class="hero-btn">Motion & Explainers</a>
+    <!-- SECCIÓN 2: FILMS & SERIES -->
+    <section id="films-series" class="page-section">
+      <main class="main-container full-width-container">
+        <div class="section-title-wrapper">
+          <h1 class="page-title">Films & Series</h1>
         </div>
-      </section>
-    </main>
+
+        <div class="films-grid-seamless">
+          <!-- 1. Ugamú -->
+          <div class="project-card seamless-card" data-group="films" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper">
+              <img src="https://vumbnail.com/215218701.jpg" alt="Ugamú">
+            </div>
+            <template class="project-data">
+              <span class="p-title">Ugamú</span>
+              <span class="p-category">TV Series | 2D Digital</span>
+              <div class="p-desc">
+                <p>When Ugamu began to be Oscar's imaginary friend, he never thought that he would spend so much time with him. Now Oscar is 15 years old and Ugamu is desperate.</p>
+                <p><strong>Credits:</strong> Original Concept, Direction Development, Script & Animation by Fabián Guamaní Aldaz.</p>
+                <p><strong>Distinctions:</strong> Winning Project at MIFA Pitching Sessions (Annecy 2018), Ciclic Animation Residence (France 2019), and Best Animated Series Project at Animation Workshop Laboratory (Denmark 2016).</p>
+              </div>
+              <span class="p-vimeo">215218701</span>
+            </template>
+          </div>
+
+          <!-- 2. Frontera -->
+          <div class="project-card seamless-card" data-group="films" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper">
+              <img src="https://vumbnail.com/329537245.jpg" alt="Frontera">
+            </div>
+            <template class="project-data">
+              <span class="p-title">Frontera / Border</span>
+              <span class="p-category">Animated Short Film | 2D Digital | 2017</span>
+              <div class="p-desc">
+                <p>In a war-stricken territory, a child playing make-believe pretends that he's a soldier. One day, he meets a wounded soldier and decides to take care of him. Reality, however, soon comes and ends the game.</p>
+                <p><strong>Credits:</strong> Direction, Script and Animation by Fabián Guamaní Aldaz.</p>
+                <p><strong>Distinctions:</strong> Official Selection at Annecy International Film Festival (2017), Animation Festival Anima Latina (2017), International Animated Films Festival KROK (2017), Lisbon Animated Film Festival MONSTRA (2018), and Indie-AniFest (2019), etc.</p>
+              </div>
+              <span class="p-vimeo">329537245</span>
+            </template>
+          </div>
+
+          <!-- 3. Bibi da Lolo -->
+          <div class="project-card seamless-card" data-group="films" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper">
+              <img src="https://vumbnail.com/1012374535.jpg" alt="Bibi da Lolo">
+            </div>
+            <template class="project-data">
+              <span class="p-title">Bibi da Lolo</span>
+              <span class="p-category">Children Web Series Project | 2D Animation | 2022</span>
+              <div class="p-desc">
+                <p>Bunny twins Bibi and Lolo explore the world through fun everyday adventures, making new friends and inviting young audiences to learn and play alongside them through engaging, interactive activities.</p>
+                <p><strong>Credits:</strong> Created, Directed and Animated by Fabián Guamaní Aldaz. Produced by World Vision Georgia.</p>
+              </div>
+              <span class="p-vimeo">1012374535</span>
+            </template>
+          </div>
+
+          <!-- 4. Gran Lago -->
+          <div class="project-card seamless-card" data-group="films" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper">
+              <img src="https://vumbnail.com/1106889088.jpg" alt="Gran Lago">
+            </div>
+            <template class="project-data">
+              <span class="p-title">Gran Lago / Big Lake</span>
+              <span class="p-category">Short Film | 2D Digital | 2024</span>
+              <div class="p-desc">
+                <p>Many generations of fishermen have lived around a lake keeping a vital connection with it. A drought dries up the lake and fishermen set on a journey to faraway lands. Only one decides to stay. He knows the lake's destiny is his destiny too.</p>
+                <p><strong>Credits:</strong> Script, Direction, Concept Art & Animation by Fabián Guamaní Aldaz.</p>
+                <p><strong>Distinctions:</strong> MIFA Pitching Sessions - Animation du Monde, Annecy International Film Festival, 2020.</p>
+              </div>
+              <span class="p-vimeo">1106889088</span>
+            </template>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- SECCIÓN 3: MOTION & EXPLAINERS -->
+    <section id="motion-explainers" class="page-section">
+      <main class="main-container full-width-container">
+        <div class="section-title-wrapper">
+          <h1 class="page-title">Motion & Explainers</h1>
+        </div>
+
+        <section class="showreel-section">
+          <div class="showreel-wrapper">
+            <video id="motion-showreel-player" autoplay loop muted playsinline class="showreel-video">
+              <source src="motion-showreel.mp4" type="video/mp4">
+            </video>
+            <button id="showreel-sound-btn" class="sound-btn" onclick="toggleSound('motion-showreel-player', 'showreel-sound-btn')">
+              🔊 Unmute
+            </button>
+          </div>
+          <p class="hero-caption">Showreel 2026</p>
+        </section>
+
+        <div class="motion-grid-5col">
+          <!-- 1. Business Development Group -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1217786441.jpg" alt="Business Development Group"></div>
+            <template class="project-data">
+              <span class="p-title">Business Development Group</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1217786441</span>
+            </template>
+          </div>
+
+          <!-- 2. Reliant Credit Union-Social Media Scams -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1217782637.jpg" alt="Reliant Credit Union"></div>
+            <template class="project-data">
+              <span class="p-title">Reliant Credit Union-Social Media Scams</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1217782637</span>
+            </template>
+          </div>
+
+          <!-- 3. Week 1 - What are the communities you belong to? -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1217785264.jpg" alt="Week 1"></div>
+            <template class="project-data">
+              <span class="p-title">Week 1 - What are the communities you belong to?</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Educational web videos commissioned by Moodive Studio, Slovakia.</p></div>
+              <span class="p-vimeo">1217785264</span>
+            </template>
+          </div>
+
+          <!-- 4. UPN Fiber -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1210732402.jpg" alt="UPN Fiber"></div>
+            <template class="project-data">
+              <span class="p-title">UPN Fiber</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1210732402</span>
+            </template>
+          </div>
+
+          <!-- 5. Lui c'est Archi -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1014287027.jpg" alt="Lui c'est Archi"></div>
+            <template class="project-data">
+              <span class="p-title">Lui c'est Archi</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p><strong>Client:</strong> Les Petits Architectes, France.</p></div>
+              <span class="p-vimeo">1014287027</span>
+            </template>
+          </div>
+
+          <!-- 6. Sheaghe -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/578525711.jpg" alt="Sheaghe"></div>
+            <template class="project-data">
+              <span class="p-title">Sheaghe</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p><strong>Client:</strong> MAC Georgia.</p></div>
+              <span class="p-vimeo">578525711</span>
+            </template>
+          </div>
+
+          <!-- 7. Hum Capital Smart Raise -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1210732399.jpg" alt="Hum Capital Smart Raise"></div>
+            <template class="project-data">
+              <span class="p-title">Hum Capital Smart Raise</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1210732399</span>
+            </template>
+          </div>
+
+          <!-- 8. Motor Transport Managers -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/990886470.jpg" alt="Motor Transport Managers"></div>
+            <template class="project-data">
+              <span class="p-title">Motor Transport Managers</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">990886470</span>
+            </template>
+          </div>
+
+          <!-- 9. UPN-Albuquerque -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/578548042.jpg" alt="UPN-Albuquerque"></div>
+            <template class="project-data">
+              <span class="p-title">UPN-Albuquerque</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">578548042</span>
+            </template>
+          </div>
+
+          <!-- 10. Schneider Consulting -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/578546646.jpg" alt="Schneider Consulting"></div>
+            <template class="project-data">
+              <span class="p-title">Schneider Consulting</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">578546646</span>
+            </template>
+          </div>
+
+          <!-- 11. Moirge -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1210732403.jpg" alt="Moirge"></div>
+            <template class="project-data">
+              <span class="p-title">Moirge</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p><strong>Client:</strong> MAC Georgia.</p></div>
+              <span class="p-vimeo">1210732403</span>
+            </template>
+          </div>
+
+          <!-- 12. Digital Solutions - Logistics Manager PRO -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1216502072.jpg" alt="Digital Solutions"></div>
+            <template class="project-data">
+              <span class="p-title">Digital Solutions - Logistics Manager PRO</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1216502072</span>
+            </template>
+          </div>
+
+          <!-- 13. Schneider Electric -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1132009825.jpg" alt="Schneider Electric"></div>
+            <template class="project-data">
+              <span class="p-title">Schneider Electric</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1132009825</span>
+            </template>
+          </div>
+
+          <!-- 14. Peerlogic -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1000712129.jpg" alt="Peerlogic"></div>
+            <template class="project-data">
+              <span class="p-title">Peerlogic</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1000712129</span>
+            </template>
+          </div>
+
+          <!-- 15. Integrated Protein Technologies -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/578548906.jpg" alt="Integrated Protein Technologies"></div>
+            <template class="project-data">
+              <span class="p-title">Integrated Protein Technologies</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">578548906</span>
+            </template>
+          </div>
+
+          <!-- 16. Shutterfly Iris -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/990885810.jpg" alt="Shutterfly Iris"></div>
+            <template class="project-data">
+              <span class="p-title">Shutterfly Iris</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">990885810</span>
+            </template>
+          </div>
+
+          <!-- 17. Tidal Migrations -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1216502340.jpg" alt="Tidal Migrations"></div>
+            <template class="project-data">
+              <span class="p-title">Tidal Migrations</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1216502340</span>
+            </template>
+          </div>
+
+          <!-- 18. Grand Slam Verdicts -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1000713168.jpg" alt="Grand Slam Verdicts"></div>
+            <template class="project-data">
+              <span class="p-title">Grand Slam Verdicts</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1000713168</span>
+            </template>
+          </div>
+
+          <!-- 19. Motor Transport Managers-2 -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1140162850.jpg" alt="Motor Transport Managers-2"></div>
+            <template class="project-data">
+              <span class="p-title">Motor Transport Managers-2</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1140162850</span>
+            </template>
+          </div>
+
+          <!-- 20. San Mateo Credit Union - Conversion -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/578547557.jpg" alt="San Mateo Credit Union"></div>
+            <template class="project-data">
+              <span class="p-title">San Mateo Credit Union - Conversion</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">578547557</span>
+            </template>
+          </div>
+
+          <!-- 21. Access Home Care Revised -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1133894185.jpg" alt="Access Home Care"></div>
+            <template class="project-data">
+              <span class="p-title">Access Home Care Revised</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1133894185</span>
+            </template>
+          </div>
+
+          <!-- 22. Watermellon Org. -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/990884979.jpg" alt="Watermellon Org."></div>
+            <template class="project-data">
+              <span class="p-title">Watermellon Org.</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">990884979</span>
+            </template>
+          </div>
+
+          <!-- 23. S!Y Communications, Inc. - Profile -->
+          <div class="project-card seamless-card" data-group="motion" onclick="openModalByCard(this)">
+            <div class="card-thumbnail-wrapper"><img src="https://vumbnail.com/1216502339.jpg" alt="S!Y Communications"></div>
+            <template class="project-data">
+              <span class="p-title">S!Y Communications, Inc. - Profile</span>
+              <span class="p-category"></span>
+              <div class="p-desc"><p><strong>Role:</strong> Illustration and Animation.</p><p>Commissioned by MyeVideo Co., USA.</p></div>
+              <span class="p-vimeo">1216502339</span>
+            </template>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- SECCIÓN 4: BIO -->
+    <section id="bio" class="page-section">
+      <main class="section-container">
+        <h2 class="section-title">Biography</h2>
+        <div class="bio-content">
+          <p>I’m a Creative Director, 2D Animator, and Motion Graphic Designer specializing in cinematic storytelling.</p>
+          <p>Born in Quito and currently residing in Tbilisi, my background is shaped by high-caliber international experiences, including being selected for the animation project lab organized by The Animation Workshop in Denmark (2016), winning the Andean Call award (2017), completing a residency at Ciclic in France (2019), and participating in collective projects in South Korea.</p>
+          <p>I balance my dedication to cinematic film projects with my freelance work in motion design and explainer videos. If you are looking for a collaborator who can bring cinematic depth to commercial motion or join forces on a film project, I'd love to connect!</p>
+        </div>
+      </main>
+    </section>
+
+    <!-- SECCIÓN 5: CONTACT -->
+    <section id="contact" class="page-section">
+      <main class="section-container contact-container">
+        <h2 class="section-title">Get in touch</h2>
+        <div class="contact-content">
+          <p>For project inquiries, freelance opportunities, or collaboration:</p>
+          <a href="mailto:fabianguamanialdaz@gmail.com" class="email-link">fabianguamanialdaz@gmail.com</a>
+        </div>
+      </main>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Fabián Guamaní Aldaz. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal Overlay con Flechas de Navegación -->
+  <div id="project-modal" class="modal-overlay" onclick="closeModal(event)">
+    <button class="modal-nav prev-btn" onclick="navigateModal(-1)" aria-label="Previous">&#10094;</button>
+    
+    <div class="modal-content fullscreen-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(null, true)">&times;</button>
+      <div class="modal-body">
+        <div class="modal-vimeo-container">
+          <iframe id="modal-vimeo-iframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+        <div class="modal-details">
+          <h2 id="modal-title"></h2>
+          <p id="modal-category" class="modal-category-text"></p>
+          <div id="modal-description" class="modal-text-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="modal-nav next-btn" onclick="navigateModal(1)" aria-label="Next">&#10095;</button>
   </div>
 
   <script>
+    let currentCardsList = [];
+    let currentIndex = -1;
+
     function toggleSound(videoId, btnId) {
       const video = document.getElementById(videoId);
       const btn = document.getElementById(btnId);
@@ -67,6 +512,88 @@
         btn.textContent = '🔊 Unmute';
       }
     }
+
+    function openModalByCard(cardElement) {
+      const group = cardElement.getAttribute('data-group');
+      currentCardsList = Array.from(document.querySelectorAll(`.project-card[data-group="${group}"]`));
+      currentIndex = currentCardsList.indexOf(cardElement);
+      renderModalContent(cardElement);
+      document.getElementById('project-modal').classList.add('active');
+    }
+
+    function renderModalContent(cardElement) {
+      const template = cardElement.querySelector('.project-data');
+      if (!template) return;
+
+      const title = template.content.querySelector('.p-title').textContent;
+      const category = template.content.querySelector('.p-category').textContent;
+      const descHtml = template.content.querySelector('.p-desc').innerHTML;
+      const vimeoId = template.content.querySelector('.p-vimeo').textContent.trim();
+
+      document.getElementById('modal-title').textContent = title;
+      const catEl = document.getElementById('modal-category');
+      if (category) {
+        catEl.textContent = category;
+        catEl.style.display = 'block';
+      } else {
+        catEl.style.display = 'none';
+      }
+      document.getElementById('modal-description').innerHTML = descHtml;
+      
+      const iframe = document.getElementById('modal-vimeo-iframe');
+      iframe.src = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0`;
+    }
+
+    function navigateModal(direction) {
+      if (currentCardsList.length <= 1 || currentIndex === -1) return;
+      currentIndex = (currentIndex + direction + currentCardsList.length) % currentCardsList.length;
+      renderModalContent(currentCardsList[currentIndex]);
+    }
+
+    function closeModal(event, force = false) {
+      if (force || (event && (event.target.classList.contains('modal-overlay') || event.target.classList.contains('modal-close')))) {
+        const modal = document.getElementById('project-modal');
+        const iframe = document.getElementById('modal-vimeo-iframe');
+        iframe.src = '';
+        modal.classList.remove('active');
+        currentIndex = -1;
+      }
+    }
+
+    // Navegación por teclado (Flechas y ESC)
+    window.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('project-modal');
+      if (!modal.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        closeModal(null, true);
+      } else if (e.key === 'ArrowLeft') {
+        navigateModal(-1);
+      } else if (e.key === 'ArrowRight') {
+        navigateModal(1);
+      }
+    });
+
+    // Subrayado automático del menú durante el Scroll
+    const sections = document.querySelectorAll('.page-section');
+    const navItems = document.querySelectorAll('.nav-links .nav-item');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
+    });
   </script>
 
 </body>
